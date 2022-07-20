@@ -1,0 +1,42 @@
+<div class="flexNavigator">
+
+    <h3>
+        <a routerLink="/home" class="homeLink">
+            Softcut Recordings
+        </a>
+    </h3>
+
+    <mat-nav-list>
+        <div *ngFor="let navLink of navigationLinks">
+            <a mat-list-item (click)="parentLinkClick(navLink)">
+                <div class="parentLink">
+                    <div>
+                        {{navLink.name}}
+                    </div>
+                    <mat-icon [@indicatorRotate]="navLink.expanded ? 'expanded': 'collapsed'">
+                        expand_more
+                    </mat-icon>
+                </div>
+            </a>
+            <div *ngIf="navLink.expanded">
+                <a *ngFor="let navChild of navLink.children" (click)="childLinkSelected(navChild)"
+                    [ngClass]="navChild.selected ? 'selectedChild' : 'childLink'" mat-list-item
+                    [routerLink]="navChild.path">
+                    {{navChild.name}}
+                </a>
+            </div>
+        </div>
+    </mat-nav-list>
+
+    <div class="footer">
+        <span>
+            207.459.0726
+        </span>
+        <span>
+            mhanson048@gmail.com
+        </span>
+        <a href="https://github.com/distractionpool" target="_blank">
+            github.com/distractionpool
+        </a>
+    </div>
+</div>
