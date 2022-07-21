@@ -38,7 +38,6 @@ export class NavigatorComponent implements OnInit {
             for (let childLink of parentLink.children) {
                 childLink.selected = (childLink == link);
             }
-            let childLinks = parentLink.children;
         }
     }
 
