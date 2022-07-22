@@ -31,7 +31,7 @@ export class NornsComponent implements OnInit {
         this.mediaLinks.push(guitarLink);
 
         // Waveform and Position
-        const waveformPosLink = new MediaLink('Waveform and Position', 'Xj_0Ee663QI');
+        const waveformPosLink = new MediaLink('Waveform and Position', '3jLlEOnR73g');
         this.mediaLinks.push(waveformPosLink);
     }
 
