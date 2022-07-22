@@ -1,15 +1,38 @@
 import { Component, OnInit } from '@angular/core';
+import { MediaLink } from 'src/app/controls/media-group/media-link.model';
 
 @Component({
-  selector: 'app-norns',
-  templateUrl: './norns.component.html',
-  styleUrls: ['./norns.component.scss']
+    selector: 'app-norns',
+    templateUrl: './norns.component.html',
+    styleUrls: ['./norns.component.scss']
 })
 export class NornsComponent implements OnInit {
 
-  constructor() { }
+    mediaLinks: MediaLink[] = [];
+    showContent = false;
 
-  ngOnInit(): void {
-  }
+    constructor() { }
+
+    ngOnInit(): void {
+        this.setupMediaLinks();
+    }
+
+    setupMediaLinks() {
+        // Demo
+        const demoLink = new MediaLink('Demo', 'NU8Z__g0FPs');
+        this.mediaLinks.push(demoLink);
+
+        // Stereo I/O
+        const stereoIOLink = new MediaLink('Setup', 'NU8Z__g0FPs');
+        this.mediaLinks.push(stereoIOLink);
+        
+        // Guitar
+        const guitarLink = new MediaLink('Guitar', 'Xj_0Ee663QI');
+        this.mediaLinks.push(guitarLink);
+
+        // Waveform and Position
+        const waveformPosLink = new MediaLink('Waveform and Position', 'Xj_0Ee663QI');
+        this.mediaLinks.push(waveformPosLink);
+    }
 
 }

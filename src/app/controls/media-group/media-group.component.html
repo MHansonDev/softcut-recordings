@@ -1,0 +1,12 @@
+<div class="mediaGroup" #content>
+	<mat-tab-group (click)="displayMedia(content)">
+		<mat-tab *ngFor="let mediaLink of mediaLinks" [label]="mediaLink.label">
+			<div class="sectionContainer">
+				<div class="iframeContainer">
+					<iframe [src]="'https://www.youtube.com/embed/' + mediaLink.embedCode | sanitizeEmbed" class="youtubeEmbed">
+					</iframe>
+				</div>
+			</div>
+		</mat-tab>
+	</mat-tab-group>
+</div>
