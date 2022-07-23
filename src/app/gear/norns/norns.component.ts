@@ -23,7 +23,7 @@ export class NornsComponent implements OnInit {
         this.mediaLinks.push(demoLink);
 
         // Stereo I/O
-        const stereoIOLink = new MediaLink('Setup', 'NU8Z__g0FPs');
+        const stereoIOLink = new MediaLink('Routing & Setup', 'NU8Z__g0FPs');
         this.mediaLinks.push(stereoIOLink);
         
         // Guitar
@@ -31,7 +31,7 @@ export class NornsComponent implements OnInit {
         this.mediaLinks.push(guitarLink);
 
         // Waveform and Position
-        const waveformPosLink = new MediaLink('Waveform and Position', '3jLlEOnR73g');
+        const waveformPosLink = new MediaLink('Waveform & Position', '3jLlEOnR73g');
         this.mediaLinks.push(waveformPosLink);
     }
 
