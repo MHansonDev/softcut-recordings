@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatTabsModule } from '@angular/material/tabs';
 import { OscComponent } from './osc/osc.component';
 import { CubaseComponent } from './cubase/cubase.component';
+import { ControlsModule } from '../controls/controls.module';
 
 const gearRoutes: Routes = [
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,12 +15,15 @@ const gearRoutes: Routes = [
 
 @NgModule({
 	declarations: [
+		CubaseComponent,
+		OscComponent
 	],
 	imports: [
 		CommonModule,
 		BrowserModule,
 		MatTabsModule,
-		RouterModule.forChild(gearRoutes)
+		RouterModule.forChild(gearRoutes),
+		ControlsModule
 	]
 })
 export class SoftwareModule { }

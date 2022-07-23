@@ -7,8 +7,7 @@ import { CorderComponent } from './corder/corder.component';
 import { KeystepComponent } from './keystep/keystep.component';
 import { NeutronComponent } from './neutron/neutron.component';
 import { NornsComponent } from './norns/norns.component';
-import { MediaGroupComponent } from '../controls/media-group/media-group.component';
-import { SanitizeEmbedPipe } from '../controls/media-group/sanitize-embed.pipe';
+import { ControlsModule } from '../controls/controls.module';
 
 const gearRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -20,21 +19,19 @@ const gearRoutes: Routes = [
 
 @NgModule({
     declarations: [
-        MediaGroupComponent,
         NeutronComponent,
         NornsComponent,
         KeystepComponent,
-        CorderComponent,
-        SanitizeEmbedPipe
+        CorderComponent
     ],
     imports: [
         CommonModule,
         BrowserModule,
         MatTabsModule,
         RouterModule.forChild(gearRoutes),
+        ControlsModule
     ],
     exports: [
-        MediaGroupComponent
     ]
 })
 export class GearModule { }

@@ -3,10 +3,26 @@
 		<img src="/assets/osc-border.png" alt="Open Stage Control" />
 	</div>
 
-	<div class="sectionContainer">
-		<div class="iframeContainer">
-			<iframe src="https://youtube.com/embed/qC76XZtfZ8I" class="youtubeEmbed">
-			</iframe>
+	<div class="descriptionContainer">
+		<h3 class="sectionHeader">
+			Open Stage Control
+		</h3>
+		<div class="descriptionText">
+			<p>
+				OSC / Midi Touchpad Control
+			</p>
+			<p>
+				Open Stage Control gave me to opportunity to try out touch based UI / Midi Controller design with
+				minimal setup and configuration. The main reason I chose Open Stage Control over one of the more popular
+				OSC applications is that it's completely free of charge. Being a client/server based editor, once the
+				controller is configured on the desktop, a browser can be used to mirror the controller on a touch based
+				device to sent Midi/CC/OSC messages to a set of devices. While I don't yet have a practical way to
+				implement this into the setup, I still found it fun to trigger samples in Cubase while sitting on the
+				couch in the living room.
+			</p>
 		</div>
 	</div>
+
+	<app-media-group [mediaLinks]="mediaLinks">
+	</app-media-group>
 </div>
