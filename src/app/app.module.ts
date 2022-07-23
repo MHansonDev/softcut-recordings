@@ -11,6 +11,7 @@ import { MatListModule } from '@angular/material/list';
 
 import { HomeComponent } from './home/home.component';
 import { NavigatorComponent } from './controls/navigator/navigator.component';
+import { GearModule } from './gear/gear.module';
 
 const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -30,7 +31,8 @@ const routes: Routes = [
         MatMenuModule,
         MatIconModule,
         MatListModule,
-        NavigatorModule
+        NavigatorModule,
+        GearModule
     ],
     providers: [],
     bootstrap: [AppComponent]

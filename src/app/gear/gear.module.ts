@@ -19,19 +19,22 @@ const gearRoutes: Routes = [
 ]
 
 @NgModule({
-  declarations: [
-    MediaGroupComponent,
-    NeutronComponent,
-    NornsComponent,
-    KeystepComponent,
-    CorderComponent,
-    SanitizeEmbedPipe
-  ],
-  imports: [
-    CommonModule,
-    BrowserModule,
-    MatTabsModule,
-    RouterModule.forChild(gearRoutes),
-  ]
+    declarations: [
+        MediaGroupComponent,
+        NeutronComponent,
+        NornsComponent,
+        KeystepComponent,
+        CorderComponent,
+        SanitizeEmbedPipe
+    ],
+    imports: [
+        CommonModule,
+        BrowserModule,
+        MatTabsModule,
+        RouterModule.forChild(gearRoutes),
+    ],
+    exports: [
+        MediaGroupComponent
+    ]
 })
 export class GearModule { }
