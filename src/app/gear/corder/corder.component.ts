@@ -17,10 +17,10 @@ export class CorderComponent implements OnInit {
     }
 
     setupMediaLinks() {
-        const tapeLoopCVLink = new MediaLink('CV Tape Loop', '4Vn6dL9mZ0g');
-        this.mediaLinks.push(tapeLoopCVLink);
         const compassLoopLink = new MediaLink('Norns Compass Loop', 'UbwDL_dOFq4');
         this.mediaLinks.push(compassLoopLink);
+        const tapeLoopCVLink = new MediaLink('CV Tape Loop', '4Vn6dL9mZ0g');
+        this.mediaLinks.push(tapeLoopCVLink);
     }
 
 }
