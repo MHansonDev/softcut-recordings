@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MediaLink } from 'src/app/controls/media-group/media-link.model';
 
 @Component({
-    selector: 'app-neutron',
+    selector: 'neutron',
     templateUrl: './neutron.component.html',
     styleUrls: ['./neutron.component.scss']
 })

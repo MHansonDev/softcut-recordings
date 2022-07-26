@@ -27,8 +27,8 @@ const gearRoutes: Routes = [
     imports: [
         CommonModule,
         BrowserModule,
-        MatTabsModule,
         RouterModule.forChild(gearRoutes),
+        MatTabsModule,
         ControlsModule
     ],
     exports: [

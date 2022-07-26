@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MediaLink } from './media-link.model';
 
 @Component({
-    selector: 'app-media-group',
+    selector: 'media-group',
     templateUrl: './media-group.component.html',
     styleUrls: ['./media-group.component.scss']
 })

@@ -57,6 +57,11 @@ export class NavigatorComponent implements OnInit {
         software.children.push(new NavLink('Open Stage Control', '/osc', false));
         this.navigationLinks.push(software);
 
+        // Archive
+        let archive = new NavLink('Archive', '/archive', true);
+        archive.children.push(new NavLink('Metal', '/metal', false));
+        this.navigationLinks.push(archive);
+
     }
 
 }

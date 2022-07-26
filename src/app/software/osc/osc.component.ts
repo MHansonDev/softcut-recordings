@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MediaLink } from 'src/app/controls/media-group/media-link.model';
 
 @Component({
-    selector: 'app-osc',
+    selector: 'osc',
     templateUrl: './osc.component.html',
     styleUrls: ['./osc.component.scss']
 })

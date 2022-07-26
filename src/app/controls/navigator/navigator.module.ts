@@ -7,7 +7,7 @@ import { GearModule } from '../../gear/gear.module';
 import { SoftwareModule } from '../../software/software.module';
 
 import { HomeComponent } from '../../home/home.component';
-import { OscComponent } from 'src/app/software/osc/osc.component';
+import { ArchiveModule } from 'src/app/archive/archive.module';
 
 const navigationRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -24,6 +24,7 @@ const navigationRoutes: Routes = [
         RouterModule.forChild(navigationRoutes),
         GearModule,
         SoftwareModule,
+        ArchiveModule
     ]
 })
 export class NavigatorModule { }

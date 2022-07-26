@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MediaLink } from 'src/app/controls/media-group/media-link.model';
 
 @Component({
-    selector: 'app-cubase',
+    selector: 'cubase',
     templateUrl: './cubase.component.html',
     styleUrls: ['./cubase.component.scss']
 })
