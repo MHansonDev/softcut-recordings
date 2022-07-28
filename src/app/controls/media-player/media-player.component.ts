@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AudioFile } from './audio-file.model';
 import { AudioService } from './media-player.service';
 import { StreamState } from './stream-state';
 
@@ -10,7 +11,7 @@ import { StreamState } from './stream-state';
 
 export class MediaPlayerComponent {
 
-    files: Array<any> = [];
+    @Input() files: Array<any> = [];
     state: StreamState;
     currentFile: any = {};
 
@@ -21,14 +22,13 @@ export class MediaPlayerComponent {
         this.audioService.getState().subscribe(state => {
             this.state = state;
         });
+    }
 
-        // mock audio files
-        const audio1 = { name: 'Audio1', artist: 'Distraction Pool', url: '/assets/Audio/Audio1.mp3', index: 0 }
-        this.files.push(audio1);
+    ngAfterViewInit(): void {
+        
     }
 
     play() {
-        this.openFile(this.files[0], this.files[0].index);
         this.audioService.play();
     }
 
@@ -56,10 +56,10 @@ export class MediaPlayerComponent {
         this.audioService.seekTo(change.value);
     }
 
-    openFile(file: any, index: number) {
+    openFile(file: AudioFile, index: number) {
         this.currentFile = { index, file };
         this.audioService.stop();
-        this.playStream(file.url);
+        this.playStream(file.path);
     }
 
     playStream(url: string) {

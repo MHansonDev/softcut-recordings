@@ -35,7 +35,7 @@ describe('NavigatorComponent', () => {
 		expect(navigator.navigationLinks.length).toBeGreaterThan(0);
 	}));
 
-	it(`click should expand the parent portal`, async(() => {
+	it(`click should expand the portal`, async(() => {
 		const fixture = TestBed.createComponent(NavigatorComponent);
 		const navigator = fixture.debugElement.componentInstance;
 		navigator.navigationLinks = [new NavLink('Portal 1', '/portal1', true)];

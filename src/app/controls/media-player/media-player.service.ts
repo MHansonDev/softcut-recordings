@@ -94,6 +94,10 @@ export class AudioService {
 		this.stop$.next(true);
 	}
 
+	mute() {
+		// this.audioObj.muted = true;
+	}
+
 	seekTo(seconds: number) {
 		this.audioObj.currentTime = seconds;
 	}

@@ -42,3 +42,17 @@
 		font-size: 48px !important;
 	}
 }
+
+.audioLink {
+	border: thin solid lightgray;
+}
+
+.audioLink:hover {
+  font-weight: bold;
+  background-color: lightgray;
+  border: thin solid black;
+}
+
+.playerContainer {
+	padding-top: 10px;
+}
