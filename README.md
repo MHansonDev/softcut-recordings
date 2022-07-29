@@ -8,7 +8,7 @@
  * Archive of rendered Cubase projects
  
 
- ## Project setup
+ ## Project Setup
 ```
 npm install
 ```
@@ -17,7 +17,7 @@ npm install
 ng serve
 ```
 
-## Control Unit Tests
+## Project Unit Tests
 ```
 ng test
 ```
