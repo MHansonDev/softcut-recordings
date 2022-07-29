@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MediaService } from './media.service';
 
 @Component({
     selector: 'root',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
 
 export class ArchiveComponent {
 
-    constructor() { }
+    constructor(
+    ) {
+    }
 
 }

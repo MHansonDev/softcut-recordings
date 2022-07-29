@@ -60,6 +60,7 @@ export class NavigatorComponent implements OnInit {
         // Archive
         let archive = new NavLink('Archive', '/archive', true);
         archive.children.push(new NavLink('Metal', '/metal', false));
+        archive.children.push(new NavLink('API Test', '/api', false));
         this.navigationLinks.push(archive);
 
     }
