@@ -10,8 +10,12 @@ export class MediaService {
 		private http: HttpClient
 	) { }
 
-	getMediaTypes(): Observable<any> {
-		return this.http.get<any>('http://localhost:3000/mysql');
+	getMediaTypes(): Observable<MediaType[]> {
+		return this.http.get<MediaType[]>('http://localhost:3000/mysql');
+	}
+
+	createMediaType(mediaType: MediaType): Observable<any> {
+		return this.http.post<any>('http://localhost:3000/createMediaType', mediaType);
 	}
 
 }

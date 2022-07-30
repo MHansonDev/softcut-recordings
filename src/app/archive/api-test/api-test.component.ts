@@ -20,6 +20,13 @@ export class APIComponent {
 		this.getMediaTypes();
 	}
 
+	createMediaTypeClick() {
+		const mediaType: MediaType = new MediaType('test', 'test');
+		this.mediaService.createMediaType(mediaType).subscribe((result) => {
+			console.log(result);
+		});
+	}
+
 	getMediaTypes() {
 		this.mediaService.getMediaTypes().subscribe((types) => {
 			this.mediaTypes = types;
