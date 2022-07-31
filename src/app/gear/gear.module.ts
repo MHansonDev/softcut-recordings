@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { CorderComponent } from './corder/corder.component';
@@ -8,6 +7,7 @@ import { KeystepComponent } from './keystep/keystep.component';
 import { NeutronComponent } from './neutron/neutron.component';
 import { NornsComponent } from './norns/norns.component';
 import { ControlsModule } from '../controls/controls.module';
+import { MaterialModule } from '../material.module';
 
 const gearRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -28,8 +28,8 @@ const gearRoutes: Routes = [
         CommonModule,
         BrowserModule,
         RouterModule.forChild(gearRoutes),
-        MatTabsModule,
-        ControlsModule
+        MaterialModule,
+        ControlsModule,
     ],
     exports: [
     ]

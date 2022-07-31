@@ -1,11 +1,52 @@
-<button (click)="mediaTypesClick()">
-	Get Media Types
-</button>
+<mat-tab-group>
+	<mat-tab [label]="'Media Type'">
+		<div class="tabContent">
+			<input matInput [(ngModel)]="mediaTypeName" placeholder="Name" autofocus />
+			<input matInput [(ngModel)]="mediaTypeDescription" placeholder="Description" />
+			<button mat-raised-button (click)="createMediaTypeClick()">
+				Create New Media Type
+			</button>
 
-<button (click)="createMediaTypeClick()">
-	Create Media Type ('test', 'test')
-</button>
+			<table *ngIf="mediaTypes && mediaTypes.length > 0">
+				<tr>
+					<th>
+						Media Type name
+					</th>
+					<th>
+						Description
+					</th>
+					<th>
+						Action
+					</th>
+				</tr>
+				<tr *ngFor="let type of mediaTypes">
+					<td>
+						{{type.name}}
+					</td>
+					<td>
+						{{type.description}}
+					</td>
+					<td>
+						<a (click)="deleteMediaType(type)" style="color:blue; cursor:pointer;">
+							Delete
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</mat-tab>
 
-<div *ngFor="let type of mediaTypes">
-	{{type.name}}
-</div>
+	<mat-tab label="Audio">
+			<button mat-raised-button (click)="createMediaTypeClick()">
+				Create Media Type ('test', 'test')
+			</button>
+	</mat-tab>
+</mat-tab-group>
+
+
+<!-- <div style="display: flex; flex-direction: row; border-collapse: collapse; padding-top:10px;">
+	<div style="border:thin solid lightgray; width:100px;">
+	</div>
+	<div style="border:thin solid lightgray; width:50px;">
+	</div>
+</div> -->

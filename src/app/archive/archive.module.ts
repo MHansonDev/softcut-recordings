@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { ControlsModule } from '../controls/controls.module';
+import { MaterialModule } from '../material.module';
 import { APIComponent } from './api-test/api-test.component';
 import { MediaService } from './media.service';
 import { MetalComponent } from './metal/metal.component';
-
 
 const gearRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -19,9 +20,11 @@ const gearRoutes: Routes = [
 		APIComponent
 	],
 	imports: [
+		FormsModule,
 		BrowserModule,
 		RouterModule.forChild(gearRoutes),
-		ControlsModule
+		ControlsModule,
+		MaterialModule
 	],
 	providers: [
 		MediaService
