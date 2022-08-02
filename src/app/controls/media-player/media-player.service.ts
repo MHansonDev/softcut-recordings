@@ -31,9 +31,14 @@ export class AudioService {
 		currentTime: undefined,
 		canplay: false,
 		error: false,
+		muted: false
 	};
 
 	private stateChange: BehaviorSubject<StreamState> = new BehaviorSubject(this.state);
+
+	constructor() {
+		this.audioObj.muted = false;
+	}
 
 	private updateStateEvents(event: Event): void {
 		switch (event.type) {
@@ -74,7 +79,8 @@ export class AudioService {
 			duration: undefined,
 			currentTime: undefined,
 			canplay: false,
-			error: false
+			error: false,
+			muted: false
 		};
 	}
 

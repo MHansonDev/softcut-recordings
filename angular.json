@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "audio-shrapnel": {
+    "softcut-recordings": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -21,7 +21,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
 	    "aot": true,
-            "outputPath": "dist/audio-shrapnel",
+            "outputPath": "dist/softcut-recordings",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "audio-shrapnel:build:production"
+              "browserTarget": "softcut-recordings:build:production"
             },
             "development": {
-              "browserTarget": "audio-shrapnel:build:development"
+              "browserTarget": "softcut-recordings:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "audio-shrapnel:build"
+            "browserTarget": "softcut-recordings:build"
           }
         },
         "test": {
@@ -108,5 +108,5 @@
       }
     }
   },
-  "defaultProject": "audio-shrapnel"
+  "defaultProject": "softcut-recordings"
 }

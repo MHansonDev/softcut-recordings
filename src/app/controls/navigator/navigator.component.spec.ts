@@ -1,6 +1,8 @@
 import { TestBed, async } from '@angular/core/testing';
-import { MatListModule } from '@angular/material/list';
+import { MatListModule, MatNavList } from '@angular/material/list';
+import { MatTabGroup, MatTabsModule } from '@angular/material/tabs';
 import { Router } from '@angular/router';
+import { MaterialModule } from 'src/app/material.module';
 import { NavLink } from './nav-link.model';
 import { NavigatorComponent } from './navigator.component';
 
@@ -12,7 +14,10 @@ const RouterSpy = jasmine.createSpyObj(
 describe('NavigatorComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			imports: [MatListModule],
+			imports: [
+				MatTabsModule,
+				MatListModule
+			],
 			declarations: [
 				NavigatorComponent,
 			],
