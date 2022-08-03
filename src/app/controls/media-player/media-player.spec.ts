@@ -2,12 +2,10 @@ import { TestBed, async } from '@angular/core/testing';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { Router } from '@angular/router';
+import { AudioFile } from './audio-file.model';
 import { MediaPlayerComponent } from './media-player.component';
-import { AudioService } from './media-player.service';
 
 class MockAudioService {
-	//   signedIn$: BehaviorSubject<boolean> = new BehaviorSubject(false);
-	getState() { }
 }
 
 const RouterSpy = jasmine.createSpyObj(
@@ -24,11 +22,13 @@ describe('MediaPlayerComponent', () => {
 				MediaPlayerComponent,
 			],
 			providers: [
-				{ provide: Router, useValue: RouterSpy },
-				{ provide: AudioService, useValue: MockAudioService },
-				AudioService
+				{ provide: Router, useValue: RouterSpy }
 			]
 		}).compileComponents();
+
+		document.addEventListener("click", function () {
+		});
+		document.dispatchEvent(new Event("click", { 'bubbles': true }));
 	}));
 
 	it('should create the media player', async(() => {
@@ -37,12 +37,18 @@ describe('MediaPlayerComponent', () => {
 		expect(mediaPlayer).toBeTruthy();
 	}));
 
-	// it(`play button should resume playpack`, async(() => {
-	// 	const fixture = TestBed.createComponent(MediaPlayerComponent);
-	// 	const mediaPlayer: MediaPlayerComponent = fixture.debugElement.componentInstance;
-	// 	// Trigger the play button
-	// 	mediaPlayer.play();
-	// 	expect(mediaPlayer.audioService).toBeTrue();
-	// }));
+	it(`play button should resume playpack`, async(() => {
+		// Test continues to fail due to the error: 'NotAllowedError: play() failed because the user didn't interact with the document first'.
+		// Tried all the stack overflow recommendations including triggering custom events before the play() method is triggered. No such luck.
+		const fixture = TestBed.createComponent(MediaPlayerComponent);
+		const mediaPlayer: MediaPlayerComponent = fixture.debugElement.componentInstance;
+		mediaPlayer.audioRef.nativeElement.click();
+		setTimeout(() => {
+			let testFile = new AudioFile('Medium Roast', 'Mathew Hanson', '/assets/Audio/Medium Roast.mp3');
+			mediaPlayer.files = [testFile];
+			// mediaPlayer.openFile(testFile, 0);
+			expect(mediaPlayer.audioRef.nativeElement.played).toBeTruthy();
+		}, 0);
+	}));
 
 });

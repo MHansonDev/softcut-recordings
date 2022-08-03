@@ -1,11 +1,12 @@
 import { TestBed, async } from '@angular/core/testing';
+import { MaterialModule } from 'src/app/material.module';
 import { MediaGroupComponent } from './media-group.component';
 import { MediaLink } from './media-link.model';
 
 describe('MediaGroupComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
-			imports: [],
+			imports: [MaterialModule],
 			declarations: [
 				MediaGroupComponent
 			]
