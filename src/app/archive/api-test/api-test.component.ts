@@ -18,6 +18,9 @@ export class APIComponent {
         private mediaService: MediaService
 	) {
 		this.getMediaTypes();
+		this.mediaService.mediaTypeObservable().subscribe((mediaTypes: MediaType[]) => {
+			this.mediaTypes = mediaTypes;
+		})
 	}
 
 	createMediaTypeClick() {
@@ -34,9 +37,7 @@ export class APIComponent {
 	}
 
 	getMediaTypes() {
-		this.mediaService.getMediaTypes().subscribe((types) => {
-			this.mediaTypes = types;
-		})
+		this.mediaService.getMediaTypes();
 	}
 
 }

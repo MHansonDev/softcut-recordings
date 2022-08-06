@@ -21,3 +21,9 @@ ng serve
 ```
 ng test
 ```
+
+## Test API
+Download code from https://github.com/MHansonDev/media-collection
+```
+node src/media-collection.js
+```
