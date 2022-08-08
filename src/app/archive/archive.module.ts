@@ -5,18 +5,21 @@ import { RouterModule, Routes } from '@angular/router';
 import { ControlsModule } from '../controls/controls.module';
 import { MaterialModule } from '../material.module';
 import { APIComponent } from './api-test/api-test.component';
+import { ElectronicComponent } from './electronic/electronic.component';
 import { MediaService } from './media.service';
 import { MetalComponent } from './metal/metal.component';
 
 const gearRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'metal', component: MetalComponent },
+    { path: 'electronic', component: ElectronicComponent },
 	{ path: 'api', component: APIComponent }
 ]
 
 @NgModule({
 	declarations: [
 		MetalComponent,
+		ElectronicComponent,
 		APIComponent
 	],
 	imports: [

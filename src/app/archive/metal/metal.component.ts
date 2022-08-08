@@ -17,13 +17,13 @@ export class MetalComponent {
 
     setupAudioFiles() {
         // Metal Audio files
-        const mediumRoast = new AudioFile('Medium Roast', 'Mathew Hanson', '/assets/Audio/Medium Roast.mp3');
+        const mediumRoast = new AudioFile('Medium Roast', 'Mathew Hanson', '/assets/Audio/Metal/Medium Roast.mp3');
         this.audioFiles.push(mediumRoast);
 
-        const bluesica = new AudioFile('Bluesica', 'Mathew Hanson', '/assets/Audio/Bluesica.mp3');
+        const bluesica = new AudioFile('Bluesica', 'Mathew Hanson', '/assets/Audio/Metal/Bluesica.mp3');
         this.audioFiles.push(bluesica);
 
-        const arduous = new AudioFile('Arduous', 'Mathew Hanson', '/assets/Audio/Arduous.mp3');
+        const arduous = new AudioFile('Arduous', 'Mathew Hanson', '/assets/Audio/Metal/Arduous.mp3');
         this.audioFiles.push(arduous);
     }
 
