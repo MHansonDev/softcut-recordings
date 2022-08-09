@@ -45,12 +45,14 @@
 
 .audioLink {
 	border: thin solid lightgray;
+	box-sizing: border-box;
 }
 
 .audioLink:hover {
-  font-weight: bold;
-  background-color: lightgray;
-  border: thin solid black;
+	font-weight: bold;
+	background-color: lightgray;
+	border: thin solid black;
+	box-sizing: border-box;
 }
 
 .playerContainer {

@@ -17,14 +17,12 @@ export class MetalComponent {
 
     setupAudioFiles() {
         // Metal Audio files
-        const mediumRoast = new AudioFile('Medium Roast', 'Mathew Hanson', '/assets/Audio/Metal/Medium Roast.mp3');
-        this.audioFiles.push(mediumRoast);
-
-        const bluesica = new AudioFile('Bluesica', 'Mathew Hanson', '/assets/Audio/Metal/Bluesica.mp3');
-        this.audioFiles.push(bluesica);
-
-        const arduous = new AudioFile('Arduous', 'Mathew Hanson', '/assets/Audio/Metal/Arduous.mp3');
-        this.audioFiles.push(arduous);
+        this.audioFiles.push(new AudioFile('Medium Roast', 'Mathew Hanson', '/assets/Audio/Metal/Medium Roast.mp3'));
+        this.audioFiles.push(new AudioFile('Bluesica', 'Mathew Hanson', '/assets/Audio/Metal/Bluesica.mp3'));
+        this.audioFiles.push(new AudioFile('Arduous', 'Mathew Hanson', '/assets/Audio/Metal/Arduous.mp3'));
+        this.audioFiles.push(new AudioFile('Starting on a Blue Desert', 'Mathew Hanson', '/assets/Audio/Metal/Starting on a Blue Desert.mp3'));
+        this.audioFiles.push(new AudioFile('Confused Smoke Detector', 'Mathew Hanson', '/assets/Audio/Metal/Confused Smoke Detector.mp3'));
+        this.audioFiles.push(new AudioFile('We\'re Hirin\'', 'Mathew Hanson', '/assets/Audio/Metal/We\'re Hirin\'.mp3'));
     }
 
 }
