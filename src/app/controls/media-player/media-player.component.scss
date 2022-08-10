@@ -1,51 +1,14 @@
-.main-toolbar {
-	.spacer {
-		flex: 1 1 auto;
-	}
-
-	.toolbar-btn {
-		font-size: 16px;
-		margin-right: 5px;
-		cursor: pointer;
-	}
-}
-
-.content {
-	.logo {
-		margin: 2.5rem;
-		text-align: center;
-		font-size: 24px;
-		color: #3f51b5;
-
-		.mat-icon {
-			height: 160px !important;
-			width: 160px !important;
-			font-size: 160px !important;
-		}
-	}
-}
-
-.time-slider {
-	width: 100% !important;
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
-.media-action-bar {
-	width: 100%;
-	padding: 2.5rem;
-	justify-content: center;
-
-	.mat-icon {
-		height: 48px !important;
-		width: 48px !important;
-		font-size: 48px !important;
-	}
+.mediaList {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
 .audioLink {
+	height: 40px !important;
 	border: thin solid lightgray;
 	box-sizing: border-box;
+	cursor: pointer;
 }
 
 .audioLink:hover {
@@ -56,5 +19,14 @@
 }
 
 .playerContainer {
-	padding-top: 10px;
+	position: absolute;
+	bottom: 10px;
+}
+
+.mat-list-base {
+	padding: 0;
+}
+
+h4 {
+	margin: 0;
 }

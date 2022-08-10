@@ -18,7 +18,6 @@ export class ElectronicComponent {
     setupAudioFiles() {
         // Electronic Audio files
         this.audioFiles.push(new AudioFile('Neutron Showcase', 'Mathew Hanson', '/assets/Audio/Electronic/Neutron Showcase.mp3'));
-        this.audioFiles.push(new AudioFile('Isomatic', 'Mathew Hanson', '/assets/Audio/Electronic/Isomatic.mp3'));
         this.audioFiles.push(new AudioFile('Cthulhu', 'Mathew Hanson', '/assets/Audio/Electronic/Cthulhu.mp3'));
         this.audioFiles.push(new AudioFile('Slammed Corder', 'Mathew Hanson', '/assets/Audio/Electronic/Slammed Corder.mp3'));
         this.audioFiles.push(new AudioFile('SubHarmon', 'Mathew Hanson', '/assets/Audio/Electronic/Subharmon.mp3'));
