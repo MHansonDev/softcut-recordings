@@ -1,4 +1,8 @@
 <mat-tab-group>
+	<mat-tab label="Audio">
+		<audio-api></audio-api>
+	</mat-tab>
+
 	<mat-tab [label]="'Media Type'">
 		<div class="tabContent">
 
@@ -43,16 +47,4 @@
 		</div>
 	</mat-tab>
 
-	<mat-tab label="Audio">
-		<button mat-raised-button (click)="createMediaTypeClick()">
-		</button>
-	</mat-tab>
 </mat-tab-group>
-
-
-<!-- <div style="display: flex; flex-direction: row; border-collapse: collapse; padding-top:10px;">
-	<div style="border:thin solid lightgray; width:100px;">
-	</div>
-	<div style="border:thin solid lightgray; width:50px;">
-	</div>
-</div> -->

@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ControlsModule } from '../controls/controls.module';
 import { MaterialModule } from '../material.module';
 import { APIComponent } from './api-test/api-test.component';
+import { AudioApiComponent } from './api-test/audio/audio-api.component';
+import { AudioApiService } from './api-test/audio/audio-api.service';
 import { ChillComponent } from './chill/chill.component';
 import { ElectronicComponent } from './electronic/electronic.component';
 import { MediaService } from './media.service';
@@ -23,7 +25,8 @@ const gearRoutes: Routes = [
 		MetalComponent,
 		ElectronicComponent,
 		ChillComponent,
-		APIComponent
+		APIComponent,
+		AudioApiComponent
 	],
 	imports: [
 		FormsModule,
@@ -33,7 +36,8 @@ const gearRoutes: Routes = [
 		MaterialModule
 	],
 	providers: [
-		MediaService
+		MediaService,
+		AudioApiService
 	]
 })
 export class ArchiveModule { }

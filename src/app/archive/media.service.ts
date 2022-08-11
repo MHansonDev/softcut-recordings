@@ -27,13 +27,13 @@ export class MediaService {
 	) { }
 
 	getMediaTypes() {
-		return this.http.get<MediaType[]>('http://localhost:3000/getMediaTypes').subscribe((types: MediaType[]) => {
+		return this.http.get<MediaType[]>('http://localhost:3000/mediaType/getMediaTypes').subscribe((types: MediaType[]) => {
 			this.mediaTypes = types;
 		});
 	}
 
 	createMediaType(mediaType: MediaType): Observable<any> {
-		return this.http.post<any>('http://localhost:3000/createMediaType', mediaType);
+		return this.http.post<any>('http://localhost:3000/mediaType/createMediaType', mediaType);
 	}
 
 	deleteMediaType(id: number): Observable<any> {
@@ -45,7 +45,7 @@ export class MediaService {
 				id: id,
 			}
 		};
-		return this.http.delete<any>('http://localhost:3000/deleteMediaType', options);
+		return this.http.delete<any>('http://localhost:3000/mediaType/deleteMediaType', options);
 	}
 
 }
