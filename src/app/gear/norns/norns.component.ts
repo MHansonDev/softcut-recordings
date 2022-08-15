@@ -21,11 +21,6 @@ export class NornsComponent implements OnInit {
         // Demo
         const demoLink = new MediaLink('Demo', 'NU8Z__g0FPs');
         this.mediaLinks.push(demoLink);
-
-        // Placeholder till the setup video is complete
-        // Stereo I/O
-        const stereoIOLink = new MediaLink('Routing & Setup', 'NU8Z__g0FPs');
-        this.mediaLinks.push(stereoIOLink);
         
         // Guitar
         const guitarLink = new MediaLink('Guitar', 'Xj_0Ee663QI');
