@@ -1,0 +1,30 @@
+table {
+	border-collapse: collapse;
+	width: 600px;
+}
+
+th,
+td {
+	border: thin solid lightgray;
+	padding-left: 10px;
+}
+
+th {
+	text-align: left;
+}
+
+button {
+	margin: 10px;
+}
+
+.tabContent {
+	padding: 25px;
+}
+
+.mediaTypeTable {
+	padding-top:25px;
+}
+
+mat-form-field {
+	width:200px; padding-left:20px; padding-right:20px;
+}

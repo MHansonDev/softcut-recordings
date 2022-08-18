@@ -1,0 +1,36 @@
+version: '1.0'
+
+services:
+  mongodb-container:
+    image: "mcr.microsoft.com/mssql/server"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mssql_data:/var/opt/mssql/data
+
+  softcut-data:
+    build: ./softcut-data
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./softcut-data:/src/
+      - nodemodules-data:/softcut-data/node_modules
+    depends_on:
+      - mongodb-container
+
+  softcut-ui:
+    build: ./softcut-ui
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./softcut-ui:/src/
+      - nodemodules-ui:/src/node_modules
+    depends_on:
+      - softcut-data
+      - mongodb-container
+
+volumes:
+  nodemodules-ui: {}
+  nodemodules-data: {}
