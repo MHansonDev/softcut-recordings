@@ -7,8 +7,16 @@
  * Documentation of a home music production setup
  * Archive of rendered Cubase projects
  
+ 
+ ## Docker Install:
+  - Requirements: Docker Engine (from root directory)
 
- ## Project Setup
+```
+docker compose up
+```
+ 
+
+ ##  Angular Project Development Setup (from softcut-ui):
 ```
 npm install
 ```
@@ -17,13 +25,12 @@ npm install
 ng serve
 ```
 
-## Project Unit Tests
+## Angular Unit Tests
 ```
 ng test
 ```
 
-## Test API
-Download code from https://github.com/MHansonDev/media-collection
+## Test API Development Setup (from softcut-data)
 ```
 node src/media-collection.js
 ```
