@@ -1,1 +1,5 @@
+# Docker Volume Directory
 /mssql_data
+
+#vim
+*.swp

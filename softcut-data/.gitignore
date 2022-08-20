@@ -1,6 +1,9 @@
 # Node
 /node_modules
 
+#vim
+*.swp
+
 # System files
 .DS_Store
 Thumbs.db
