@@ -27,7 +27,7 @@ export class MediaService {
 	) { }
 
 	getMediaTypes() {
-		return this.http.get<MediaType[]>('http://localhost:3000/mediaType/getMediaTypes').subscribe((types: MediaType[]) => {
+		return this.http.get<MediaType[]>('http://localhost:3001/mediaType/getMediaTypes').subscribe((types: MediaType[]) => {
 			this.mediaTypes = types;
 		});
 	}

@@ -1,10 +1,11 @@
 const mysql = require('mysql')
 
+console.log('Connecting to MYSQL...')
 var connection = mysql.createConnection({
 	host: '172.17.0.1',
-	database: 'db',
+	database: 'media',
 	port: '3306',
-	user: 'root',
+	user: 'user',
 	password: 'password'
 })
 

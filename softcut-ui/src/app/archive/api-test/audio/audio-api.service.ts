@@ -27,13 +27,13 @@ export class AudioApiService {
 	) { }
 
 	getGenres() {
-		return this.http.get<Genre[]>('http://localhost:3000/genre/getGenres').subscribe((genres: Genre[]) => {
+		return this.http.get<Genre[]>('http://localhost:3001/genre/getGenres').subscribe((genres: Genre[]) => {
 			this.genres = genres;
 		});
 	}
 
 	createGenre(genre: Genre): Observable<any> {
-		return this.http.post<any>('http://localhost:3000/genre/createGenre', genre);
+		return this.http.post<any>('http://localhost:3001/genre/createGenre', genre);
 	}
 
 	deleteGenre(id: number): Observable<void> {
@@ -45,7 +45,7 @@ export class AudioApiService {
 				id: id,
 			}
 		};
-		return this.http.delete<void>('http://localhost:3000/genre/deleteGenre', options);
+		return this.http.delete<void>('http://localhost:3001/genre/deleteGenre', options);
 	}
 
 }
