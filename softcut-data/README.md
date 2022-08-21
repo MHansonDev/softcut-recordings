@@ -19,7 +19,8 @@ node src/media-collection.js
 ```
 
 ## Docker Setup
-After container is running, execute the following to connect to MYSQL media DB:
+Run Docker Compose from root directory
+After softcut-data container is running, execute the following to connect to MYSQL media DB:
 ```
 mysql -h localhost -u root -p
 ```
