@@ -2,6 +2,7 @@ version: '1.0'
 
 services:
   mysql-container:
+    container_name: mysql-container
     image: mysql:5.7
     restart: always
     environment:
