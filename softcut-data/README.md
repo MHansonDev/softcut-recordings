@@ -4,7 +4,7 @@ Node JS & MySQL Studies. Media Attribute Storage & API
 ## Project Setup
 Execute MySql Schema/Data Changes in the following order:
 ```
-src/database/
+src/database/scripts
  - init_schema.sql
  - init_data.sql
 ```
