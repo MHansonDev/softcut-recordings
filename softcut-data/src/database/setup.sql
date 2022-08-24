@@ -1,7 +1,0 @@
-DELIMITER $$
-DROP PROCEDURE IF EXISTS SetupMediaDB $$
-CREATE PROCEDURE SetupMediaDB()
-BEGIN
-	Select * From media_type;
-END $$
-DELIMITER ;
