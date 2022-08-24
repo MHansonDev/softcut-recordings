@@ -2,12 +2,11 @@
 Node JS & MySQL Studies. Media Attribute Storage & API
 
 ## Project Setup
-Execute MySql Schema/Data Changes
+Execute MySql Schema/Data Changes in the following order:
 ```
-src/database/Schema Changes.sql
- - genre.sql
- - media_type.sql
- - audio.sql
+src/database/
+ - init_schema.sql
+ - init_data.sql
 ```
 
 ```
