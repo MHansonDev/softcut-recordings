@@ -21,6 +21,7 @@ export class ElectronicComponent {
         this.audioFiles.push(new AudioFile('Cthulhu', 'Mathew Hanson', '/assets/Audio/Electronic/Cthulhu.mp3'));
         this.audioFiles.push(new AudioFile('Slammed Corder', 'Mathew Hanson', '/assets/Audio/Electronic/Slammed Corder.mp3'));
         this.audioFiles.push(new AudioFile('SubHarmon', 'Mathew Hanson', '/assets/Audio/Electronic/Subharmon.mp3'));
+        this.audioFiles.push(new AudioFile('PreSubHarmon', 'Mathew Hanson', '/assets/Audio/Electronic/PreSubharmon.mp3'));
     }
 
 }

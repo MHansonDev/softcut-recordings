@@ -37,7 +37,7 @@ WHERE NOT EXISTS (SELECT * FROM genre WHERE `name` = 'Chill' LIMIT 1);
 /* Insert Audio file Data */
 
 /************************** Metal ***************************************/
-Declare @MetalGenreID := id From genre where `name` = 'Metal';
+Select @MetalGenreID := id From genre where `name` = 'Metal';
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'Bluesica', 'Metallica ripoff', '/Metal', '.mp3', @MetalGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Bluesica' LIMIT 1);
@@ -63,10 +63,36 @@ Select 'We''re Hirin''', 'No We''re not', '/Metal', '.mp3', @MetalGenreID, curre
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'We''re Hirin''' LIMIT 1);
 
 /****************************** Rock ****************************************/
-Declare @RockGenreID := id From genre where `name` = 'Metal';
+Select @RockGenreID := id From genre where `name` = 'Metal';
 
 /*************************** Electronic ****************************************/
-Declare @EletronicGenreID := id From genre where `name` = 'Metal';
+Select @ElectronicGenreID := id From genre where `name` = 'Electronic';
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'Neutron showcase', 'Runaway Synth', '/Electronic', '.mp3', @ElectronicGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Neutron Showcase' LIMIT 1);
+
+/*************************** Chill ****************************************/
+Select @ChillGenreID := id From genre where `name` = 'Chill';
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Isomatic', 'Jake Bowen Inspiration', '/Chill', '.mp3', @ChillGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Isomatic' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select '57 Caps', 'Lush Landscape', '/Chill', '.mp3', @ChillGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = '57 Caps' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'AntiWeen', 'A cold, yet comfortable memory', '/Chill', '.mp3', @ChillGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'AntiWeen' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Norns Lounge', 'A Digital elevator', '/Chill', '.mp3', @ChillGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Norns Lounge' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Birch Street Lofi', 'A Road Remembered', '/Chill', '.mp3', @ChillGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Birch Street Lofi' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'FM And a Maine Made Flute', 'Cultural Fire Pit', '/Chill', '.mp3', @ChillGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'FM And a Maine Made Flute' LIMIT 1);
