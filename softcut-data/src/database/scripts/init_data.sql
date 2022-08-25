@@ -63,13 +63,60 @@ Select 'We''re Hirin''', 'No We''re not', '/Metal', '.mp3', @MetalGenreID, curre
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'We''re Hirin''' LIMIT 1);
 
 /****************************** Rock ****************************************/
-Select @RockGenreID := id From genre where `name` = 'Metal';
+Select @RockGenreID := id From genre where `name` = 'Rock';
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Vapor', 'Heavy on the Delay', '/Rock', '.mp3', @RockGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Vapor' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Free Range Seltzer', 'Well thought out song title', '/Rock', '.mp3', @RockGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Free Range Seltzer' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Free Range Seltzer', 'Well thought out song title', '/Rock', '.mp3', @RockGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Free Range Seltzer' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Sweltering Faults', 'Mistakes and all...', '/Rock', '.mp3', @RockGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Sweltering Faults' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'East Annex', 'UMaine Campus of course', '/Rock', '.mp3', @RockGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'East Annex' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Purple Pitch', 'Started as a Circuit Bending Project', '/Rock', '.mp3', @RockGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Purple Pitch' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Princeton', 'First composition in a new place', '/Rock', '.mp3', @RockGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Princeton' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'MOOD', 'Chase Bliss', '/Rock', '.mp3', @RockGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'MOOD' LIMIT 1);
 
 /*************************** Electronic ****************************************/
 Select @ElectronicGenreID := id From genre where `name` = 'Electronic';
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
-Select 'Neutron showcase', 'Runaway Synth', '/Electronic', '.mp3', @ElectronicGenreID, current_date
+Select 'Neutron Showcase', 'Runaway Synth', '/Electronic', '.mp3', @ElectronicGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Neutron Showcase' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Cthulhu', 'Piano and Arpeggios', '/Electronic', '.mp3', @ElectronicGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Cthulhu' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Slammed Corder', 'Pissed Off Tape Machine', '/Electronic', '.mp3', @ElectronicGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Slammed Corder' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'SubHarmon', 'The Original Subharmonics', '/Electronic', '.mp3', @ElectronicGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'SubHarmon' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'PreSubHarmon', 'Groving Subharmonics on the Neutron', '/Electronic', '.mp3', @ElectronicGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'PreSubHarmon' LIMIT 1);
 
 /*************************** Chill ****************************************/
 Select @ChillGenreID := id From genre where `name` = 'Chill';
