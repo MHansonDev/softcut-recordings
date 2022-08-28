@@ -16,20 +16,20 @@ WHERE NOT EXISTS (Select * From media_type Where name = 'Pictures' LIMIT 1);
 
 
 /* Insert Default Generes */
-INSERT INTO genre (`name`, `description`, color, `read_only`, added_on)
-Select 'Metal', 'Heavy distortion & loud cracks', '0000FF', 1, current_date
+INSERT INTO genre (`name`, `description`, color, image, `read_only`, added_on)
+Select 'Metal', 'Double tracked guitar supplemented by a healthy amount of distortion and some drums', '0000FF', 'Metal/metal-thin-border.png',  1, current_date
 WHERE NOT EXISTS (SELECT * FROM genre WHERE `name` = 'Metal' LIMIT 1);
 
-INSERT INTO genre (`name`, `description`, color, `read_only`, added_on)
-Select 'Rock', 'A little less heavy', '0000FF', 1, current_date
+INSERT INTO genre (`name`, `description`, color, image, `read_only`, added_on)
+Select 'Rock', 'Mild Distortion with a more Mellow Vibe', '0000FF', 'Rock/rock-thin-border.png', 1, current_date
 WHERE NOT EXISTS (SELECT * FROM genre WHERE `name` = 'Rock' LIMIT 1);
 
-INSERT INTO genre (`name`, `description`, color, `read_only`, added_on)
-Select 'Electronic', 'Heavy on the synths', '0000FF', 1, current_date
+INSERT INTO genre (`name`, `description`, color, image, `read_only`, added_on)
+Select 'Electronic', 'Synths, Sequencers & Sidechaining', '0000FF', 'Electronic/electronic-thin-border.png', 1, current_date
 WHERE NOT EXISTS (SELECT * FROM genre WHERE `name` = 'Electronic' LIMIT 1);
 
-INSERT INTO genre (`name`, `description`, color, `read_only`, added_on)
-Select 'Chill', 'Not heavy at all', '0000FF', 1, current_date
+INSERT INTO genre (`name`, `description`, color, image, `read_only`, added_on)
+Select 'Chill', 'Tunes that don''t feature heavy bass or a snare that smacks', '0000FF', 'Chill/chill-thin-border.png', 1, current_date
 WHERE NOT EXISTS (SELECT * FROM genre WHERE `name` = 'Chill' LIMIT 1);
 
 

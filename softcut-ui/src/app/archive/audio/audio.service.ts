@@ -1,12 +1,14 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
-import { Genre } from "../../models/genere.model";
+import { AudioInfo } from "../models/audio-info.model";
+import { Genre } from "../models/genere.model";
 
 @Injectable()
-export class AudioApiService {
+export class AudioService {
 
 	private _genres: Genre[] = [];
+	private _audioInfo: AudioInfo[] = [];
 
 	public get genres() {
 		return this._genres
@@ -17,9 +19,23 @@ export class AudioApiService {
 		this.genreSubject$.next(this._genres);
 	}
 
+	public get audioInfo() {
+		return this._audioInfo
+	}
+
+	public set audioInfo(value: AudioInfo[]) {
+		this._audioInfo = value;
+		this.audioInfoSubject$.next(this._audioInfo);
+	}
+
 	public genreSubject$ = new BehaviorSubject<Genre[]>(this._genres);
 	genreObservable(): Observable<Genre[]> {
         return this.genreSubject$.asObservable();
+    }
+
+	public audioInfoSubject$ = new BehaviorSubject<AudioInfo[]>(this._audioInfo);
+	audioInfoObservable(): Observable<AudioInfo[]> {
+        return this.audioInfoSubject$.asObservable();
     }
 
 	constructor(
@@ -46,6 +62,14 @@ export class AudioApiService {
 			}
 		};
 		return this.http.delete<void>('http://localhost:3001/genre/deleteGenre', options);
+	}
+
+	getAudioByGenre(genreId: number) {
+		return this.http.get<AudioInfo[]>('http://localhost:3001/audio/getAudioByGenre', {
+			params: {genreId: genreId }
+		}).subscribe((audioInfo: AudioInfo[]) => {
+			this.audioInfo = audioInfo;
+		});
 	}
 
 }

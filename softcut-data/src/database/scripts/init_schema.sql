@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS genre (
 	`name` VARCHAR(200),
 	`description` VARCHAR(1000),
 	`color` varchar(50),
+	`image` varchar(500),
 	`read_only` bit,
 	added_on datetime
 );
@@ -28,8 +29,8 @@ CREATE TABLE IF NOT EXISTS genre (
 CREATE TABLE IF NOT EXISTS audio (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	file_name VARCHAR(200),
-	description VARCHAR(1000),
-	path varchar(500),
+	`description` VARCHAR(1000),
+	`path` varchar(500),
 	extension varchar(50),
 	genre int,
 	added_on DATETIME

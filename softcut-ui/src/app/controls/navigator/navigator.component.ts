@@ -23,7 +23,7 @@ export class NavigatorComponent implements OnInit {
     navigationLinks: NavLink[] = [];
 
     constructor(
-    ) { }
+    ) {}
 
     ngOnInit(): void {
         this.setNavigationLinks();
@@ -42,6 +42,7 @@ export class NavigatorComponent implements OnInit {
     }
 
     setNavigationLinks() {
+        this.navigationLinks = [];
 
         // Gear
         let gear = new NavLink('Gear', '/gear', true);
@@ -59,11 +60,7 @@ export class NavigatorComponent implements OnInit {
 
         // Archive
         let archive = new NavLink('Archive', '/archive', true);
-        archive.children.push(new NavLink('Metal', '/metal', false));
-        archive.children.push(new NavLink('Rock', '/rock', false));
-        archive.children.push(new NavLink('Electronic', '/electronic', false));
-        archive.children.push(new NavLink('Chill', '/chill', false));
-        archive.children.push(new NavLink('API Test', '/api', false));
+        archive.children.push(new NavLink('Audio', '/audio', false));
         this.navigationLinks.push(archive);
 
     }
