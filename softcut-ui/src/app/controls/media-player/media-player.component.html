@@ -1,7 +1,9 @@
-<div>
-	<div class="content">
-		<mat-list color="primary">
-			<mat-list-item *ngFor="let file of files; let i = index" (click)="openFile(file, i)" class="audioLink">
+<div class="audioFlex">
+	<div class="audioContent">
+
+		<mat-list color="primary" class="audioLinkContainer">
+			<mat-list-item *ngFor="let file of files; let i = index" (click)="openFile(file)" class="audioLink"
+				(mouseenter)="fileMouseEnter(file)" (mouseleave)="fileMouseLeave()">
 				<div class="mediaList">
 					<mat-icon color="primary" mat-list-icon>
 						music_note
@@ -10,9 +12,13 @@
 						{{file.title}}
 					</h4>
 				</div>
-				<!-- <mat-divider></mat-divider> -->
 			</mat-list-item>
 		</mat-list>
+
+		<div #audioInfo class="audioInfo">
+
+		</div>
+
 	</div>
 
 	<div class="playerContainer">

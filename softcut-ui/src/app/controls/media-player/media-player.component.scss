@@ -1,3 +1,8 @@
+.audioFlex {
+	display: flex;
+	flex-direction: column;
+}
+
 .mediaList {
 	display: flex;
 	flex-direction: row;
@@ -18,11 +23,24 @@
 	box-sizing: border-box;
 }
 
+.audioContent {
+	display: flex;
+	flex-direction: row;
+}
+
+.audioLinkContainer {
+	width: 400px;
+}
+
+.audioInfo {
+	padding-left:20px;
+}
+
 .playerContainer {
-	width: 100%;
 	background-color: white;
 	padding-top: 10px;
-	border-top: thin solid lightgray;
+	position: absolute;
+	bottom: 10px;
 }
 
 .mat-list-base {
