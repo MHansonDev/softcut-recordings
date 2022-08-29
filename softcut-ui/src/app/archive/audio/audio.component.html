@@ -1,24 +1,27 @@
-<mat-tab-group>
-	<mat-tab *ngFor="let genre of genres" label="{{genre.name}}" (click)="getAudioByGenre(genre)">
-		<div class="contentContainer">
-			<div class="headerBox">
-				<img [src]="'/assets/Images/' + genre.image" alt="Metal" />
-			</div>
+<div>
+	<mat-tab-group (selectedTabChange)="getAudioByGenre($event.index)">
+		<mat-tab *ngFor="let genre of genres" label="{{genre.name}}">
+			<div class="contentContainer">
+				<div class="headerBox">
+					<img [src]="'/assets/Images/' + genre.image" alt="Metal" />
+				</div>
 
-			<div class="descriptionContainer">
-				<h3 class="sectionHeader">
-					{{genre.name}}
-				</h3>
-				<div class="descriptionText">
-					<p>
-						{{genre.description}}
-					</p>
-					<div>
-						<media-player [files]="audioFiles"></media-player>
+				<div class="descriptionContainer">
+					<h3 class="archiveSectionHeader">
+						{{genre.name}}
+					</h3>
+					<div class="descriptionText">
+						<p>
+							{{genre.description}}
+						</p>
 					</div>
 				</div>
-			</div>
 
-		</div>
-	</mat-tab>
-</mat-tab-group>
+			</div>
+		</mat-tab>
+	</mat-tab-group>
+</div>
+
+<div>
+	<media-player [files]="audioFiles"></media-player>
+</div>

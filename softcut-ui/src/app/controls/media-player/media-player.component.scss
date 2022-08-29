@@ -19,8 +19,10 @@
 }
 
 .playerContainer {
-	position: absolute;
-	bottom: 10px;
+	width: 100%;
+	background-color: white;
+	padding-top: 10px;
+	border-top: thin solid lightgray;
 }
 
 .mat-list-base {
