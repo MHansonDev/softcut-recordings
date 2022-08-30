@@ -1,27 +1,25 @@
 <div class="audioFlex">
-	<div class="audioContent">
 
-		<mat-list color="primary" class="audioLinkContainer">
-			<mat-list-item *ngFor="let file of files; let i = index" (click)="openFile(file)" class="audioLink"
-				(mouseenter)="fileMouseEnter(file)" (mouseleave)="fileMouseLeave()">
-				<div class="mediaList">
-					<mat-icon color="primary" mat-list-icon>
-						music_note
-					</mat-icon>
-					<h4>
-						{{file.title}}
-					</h4>
-				</div>
-			</mat-list-item>
-		</mat-list>
+	<mat-list color="primary" class="audioLinkContainer">
+		<mat-list-item *ngFor="let file of files; let i = index" (click)="openFile(file)" class="audioLink"
+			(mouseenter)="fileMouseEnter(file)">
+			<div class="mediaList">
+				<span class="trackNumber">
+					{{i + 1}}:&nbsp;
+				</span>
+				<h4>
+					{{file.title}}
+				</h4>
+			</div>
+		</mat-list-item>
+	</mat-list>
 
-		<div #audioInfo class="audioInfo">
-
+	<div class="audioPlayerInfo">
+		<div class="playerContainer">
+			<audio controls #audioRef></audio>
 		</div>
-
+		<div #audioInfo>
+		</div>
 	</div>
 
-	<div class="playerContainer">
-		<audio controls #audioRef></audio>
-	</div>
 </div>

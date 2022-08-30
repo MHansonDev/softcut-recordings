@@ -17,7 +17,12 @@ export class MediaPlayerComponent {
 
     constructor(
         private audioService: AudioService
-    ) { }
+    ) {
+		this.audioService.audioClearObservable().subscribe(() => {
+            this.audioRef.nativeElement.src = '';
+            this.audioInfoRef.nativeElement.innerHTML = '<span></span>'
+        });
+    }
 
     ngAfterViewInit(): void {
     }
@@ -29,12 +34,7 @@ export class MediaPlayerComponent {
 
     fileMouseEnter(file: AudioFile) {
         let audioInfo = this.audioService.audioInfo.filter(ai => ai.id == file.id)[0];
-        this.audioInfoRef.nativeElement.style.display = 'block';
         this.audioInfoRef.nativeElement.innerHTML = '<span>Description: ' + audioInfo.description + '</span>'
-    }
-
-    fileMouseLeave() {
-        this.audioInfoRef.nativeElement.style.display = 'none';
     }
 
 }

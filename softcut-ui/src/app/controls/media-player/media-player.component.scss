@@ -1,6 +1,6 @@
 .audioFlex {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 }
 
 .mediaList {
@@ -23,24 +23,23 @@
 	box-sizing: border-box;
 }
 
-.audioContent {
-	display: flex;
-	flex-direction: row;
+.trackNumber {
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
+	color: gray;
 }
 
 .audioLinkContainer {
 	width: 400px;
 }
 
-.audioInfo {
+.audioPlayerInfo {
 	padding-left:20px;
 }
 
 .playerContainer {
 	background-color: white;
 	padding-top: 10px;
-	position: absolute;
-	bottom: 10px;
 }
 
 .mat-list-base {

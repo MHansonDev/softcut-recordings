@@ -38,6 +38,11 @@ export class AudioService {
         return this.audioInfoSubject$.asObservable();
     }
 
+	public audioClearSubject$ = new BehaviorSubject(null);
+	audioClearObservable(): Observable<null> {
+        return this.audioClearSubject$.asObservable();
+    }
+
 	constructor(
 		private http: HttpClient
 	) { }
@@ -70,6 +75,10 @@ export class AudioService {
 		}).subscribe((audioInfo: AudioInfo[]) => {
 			this.audioInfo = audioInfo;
 		});
+	}
+
+	audioClear() {
+		this.audioClearSubject$.next(null);
 	}
 
 }

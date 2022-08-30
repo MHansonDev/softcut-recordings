@@ -35,6 +35,7 @@ export class AudioComponent {
 	}
 
 	getAudioByGenre(genreIndex: number) {
+		this.audioService.audioClear();
 		this.audioService.getAudioByGenre(this.genres[genreIndex].id);
 		this.setupAudioFiles();
 	}
