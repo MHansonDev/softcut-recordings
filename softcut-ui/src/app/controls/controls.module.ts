@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material.module';
 import { MediaGroupComponent } from './media-group/media-group.component';
-import { SanitizeEmbedPipe } from './media-group/sanitize-embed.pipe';
+import { SanitizeEmbedHTMLPipe, SanitizeEmbedPipe } from './media-group/sanitize-embed.pipe';
 import { MediaPlayerComponent } from './media-player/media-player.component';
 import { NavigatorComponent } from './navigator/navigator.component';
 
@@ -12,7 +12,8 @@ import { NavigatorComponent } from './navigator/navigator.component';
     MediaGroupComponent,
     NavigatorComponent,
     MediaPlayerComponent,
-    SanitizeEmbedPipe
+    SanitizeEmbedPipe,
+    SanitizeEmbedHTMLPipe
   ],
   imports: [
     BrowserModule,

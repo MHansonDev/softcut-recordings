@@ -6,9 +6,21 @@ import { DomSanitizer, SafeHtml } from "@angular/platform-browser";
 })
 export class SanitizeEmbedPipe implements PipeTransform {
 
-    constructor(private _sanitizer: DomSanitizer) { }
+    constructor(private sanitizer: DomSanitizer) { }
 
     transform(embed: string): SafeHtml {
-        return this._sanitizer.bypassSecurityTrustResourceUrl(embed);
+        return this.sanitizer.bypassSecurityTrustResourceUrl(embed);
+    }
+}
+
+@Pipe({
+    name: "sanitizeEmbedHTML"
+})
+export class SanitizeEmbedHTMLPipe implements PipeTransform {
+
+    constructor(private sanitizer: DomSanitizer) { }
+
+    transform(embed: string): SafeHtml {
+        return this.sanitizer.bypassSecurityTrustHtml(embed);
     }
 }

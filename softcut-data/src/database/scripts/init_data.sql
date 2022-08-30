@@ -143,3 +143,7 @@ WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Birch Street Lofi' LIMI
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'FM And a Maine Made Flute', 'Cultural Fire Pit', '/Chill', '.mp3', @ChillGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'FM And a Maine Made Flute' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Cross', '<img src="..." onerror="alert(''ATTACK!'')">;', '/Chill', '.mp3', @ChillGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'XSS' LIMIT 1);

@@ -18,7 +18,7 @@
 		<div class="playerContainer">
 			<audio controls #audioRef></audio>
 		</div>
-		<div #audioInfo>
+		<div #audioInfo [innerHTML]="fileDescription | sanitizeEmbedHTML">
 		</div>
 	</div>
 

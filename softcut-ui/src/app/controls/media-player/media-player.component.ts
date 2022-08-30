@@ -1,4 +1,5 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, SecurityContext, ViewChild } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 import { AudioService } from 'src/app/archive/audio/audio.service';
 import { AudioFile } from './audio-file.model';
 
@@ -11,16 +12,21 @@ import { AudioFile } from './audio-file.model';
 export class MediaPlayerComponent {
 
     @ViewChild('audioRef', { static: true }) audioRef: ElementRef<HTMLAudioElement>;
-    @ViewChild('audioInfo', {static: true }) audioInfoRef: ElementRef<HTMLDivElement>;
+    @ViewChild('audioInfo', { static: true }) audioInfoRef: ElementRef<HTMLDivElement>;
     @Input() files: Array<any> = [];
     currentFile: any = {};
 
+    fileDescription: string = '<span></span>'
+
     constructor(
-        private audioService: AudioService
+        private audioService: AudioService,
+        private sanitizer: DomSanitizer
     ) {
-		this.audioService.audioClearObservable().subscribe(() => {
-            this.audioRef.nativeElement.src = '';
-            this.audioInfoRef.nativeElement.innerHTML = '<span></span>'
+        this.audioService.audioClearObservable().subscribe(() => {
+            if (this.audioRef && this.audioInfoRef) {
+                this.audioRef.nativeElement.src = '';
+                this.fileDescription = '<span></span>';
+            }
         });
     }
 
@@ -34,7 +40,8 @@ export class MediaPlayerComponent {
 
     fileMouseEnter(file: AudioFile) {
         let audioInfo = this.audioService.audioInfo.filter(ai => ai.id == file.id)[0];
-        this.audioInfoRef.nativeElement.innerHTML = '<span>Description: ' + audioInfo.description + '</span>'
+        let unsafeDescription = audioInfo.description;
+        this.fileDescription = 'Description: ' + unsafeDescription;
     }
 
 }
