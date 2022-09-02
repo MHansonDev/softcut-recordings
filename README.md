@@ -34,3 +34,6 @@ ng test
 ```
 node src/media-collection.js
 ```
+
+## Initial deployment:
+https://courageous-belekoy-da01ed.netlify.app/
