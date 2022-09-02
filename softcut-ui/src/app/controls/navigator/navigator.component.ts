@@ -1,5 +1,5 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import System from 'src/app/system';
 import { NavLink } from './nav-link.model';
 
@@ -25,7 +25,7 @@ export class NavigatorComponent implements OnInit {
     isMobile: boolean = false;
 
     constructor(
-    ) {}
+    ) { }
 
     ngOnInit(): void {
         this.setNavigationLinks();
@@ -66,6 +66,11 @@ export class NavigatorComponent implements OnInit {
         archive.children.push(new NavLink('Audio', '/audio', false));
         this.navigationLinks.push(archive);
 
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize() {
+        this.isMobile = System.determineMobile();
     }
 
 }
