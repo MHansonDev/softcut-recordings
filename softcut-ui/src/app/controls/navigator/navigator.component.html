@@ -4,9 +4,25 @@
         <a routerLink="/home" class="homeLink">
             Softcut Recordings
         </a>
+        
+        <div *ngIf="isMobile" class="mobileMenu">
+            <mat-icon [matMenuTriggerFor]="mobileMenu">
+                menu
+            </mat-icon>
+            <mat-menu #mobileMenu="matMenu">
+                <button *ngFor="let navLink of navigationLinks" mat-menu-item [matMenuTriggerFor]="subMenu">
+                    {{navLink.name}}
+                </button>
+            </mat-menu>
+
+            <mat-menu #subMenu="matMenu">
+                <button mat-menu-item>Admin</button>
+                <button mat-menu-item>Testuser</button>
+            </mat-menu>
+        </div>
     </h3>
 
-    <mat-nav-list>
+    <mat-nav-list *ngIf="!isMobile">
         <div *ngFor="let navLink of navigationLinks">
             <a mat-list-item (click)="parentLinkClick(navLink)">
                 <div class="parentLink">
@@ -28,7 +44,7 @@
         </div>
     </mat-nav-list>
 
-    <div class="footer">
+    <div class="footer" *ngIf="!isMobile">
         <span>
             207.459.0726
         </span>
@@ -39,4 +55,5 @@
             GitHub
         </a>
     </div>
+
 </div>

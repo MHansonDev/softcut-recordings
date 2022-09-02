@@ -1,5 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import System from 'src/app/system';
 import { NavLink } from './nav-link.model';
 
 @Component({
@@ -21,12 +22,14 @@ import { NavLink } from './nav-link.model';
 export class NavigatorComponent implements OnInit {
 
     navigationLinks: NavLink[] = [];
+    isMobile: boolean = false;
 
     constructor(
     ) {}
 
     ngOnInit(): void {
         this.setNavigationLinks();
+        this.isMobile = System.determineMobile();
     }
 
     parentLinkClick(parentLink: NavLink) {
