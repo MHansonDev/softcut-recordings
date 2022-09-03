@@ -41,33 +41,3 @@
 		float: right;
 	}
 }
-
-.footer {
-	position: absolute;
-	left: 0;
-	right: 0px;
-	bottom: 0px;
-	padding-bottom: 10px;
-	padding-right: 10px;
-}
-
-@media only screen and (max-width: 600px) {
-	.footer {
-		position: sticky;
-		left: 0;
-		right: 0;
-		top: 100px;
-		min-height: 80px;
-		max-height: 80px;
-		min-width: 100%;
-		background-color: #eeeceb;
-	}
-}
-
-.footer {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	padding-left: 55px;
-	padding-bottom: 10px;
-}
