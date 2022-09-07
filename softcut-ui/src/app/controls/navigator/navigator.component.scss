@@ -4,6 +4,13 @@
 	padding-left: 55px;
 }
 
+@media only screen and (max-width: 1090px) {
+	.flexNavigator {
+		padding: 20px;
+		padding-left: '';
+	}
+}
+
 @media only screen and (max-width: 600px) {
 	.flexNavigator {
 		padding: 20px;

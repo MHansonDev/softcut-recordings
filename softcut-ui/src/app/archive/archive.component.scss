@@ -1,3 +1,20 @@
+:host {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.archiveTopRow {
+	flex: 0 auto;
+}
+
+.archiveBottomRow {
+	display: flex;
+	height: 100%;
+	flex: 1 auto;
+	overflow: auto;
+}
+
 .archiveSectionHeader {
 	font-size: 32px !important;
 	line-height: 1.25 !important;

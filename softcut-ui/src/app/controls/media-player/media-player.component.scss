@@ -1,3 +1,8 @@
+:host {
+	display: flex;
+	flex: 1 auto;
+}
+
 .audioFlex {
 	display: flex;
 	flex-direction: row;
@@ -7,6 +12,10 @@
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+}
+
+.audioList {
+	overflow: auto;
 }
 
 .audioLink {
@@ -34,7 +43,7 @@
 }
 
 .audioPlayerInfo {
-	padding-left:20px;
+	padding-left: 20px;
 }
 
 .playerContainer {

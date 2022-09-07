@@ -1,4 +1,4 @@
-<div>
+<div class="archiveTopRow">
 	<mat-tab-group (selectedTabChange)="getAudioByGenre($event.index)">
 		<mat-tab *ngFor="let genre of genres" label="{{genre.name}}">
 			<div class="contentContainer">
@@ -22,6 +22,6 @@
 	</mat-tab-group>
 </div>
 
-<div>
+<div class="archiveBottomRow">
 	<media-player [files]="audioFiles"></media-player>
 </div>
