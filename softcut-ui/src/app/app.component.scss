@@ -40,6 +40,7 @@
 
 @media only screen and (max-width: 600px) {
     .content {
+        display: flex;
         width: auto;
         height: 100%;
         padding-left: 10px;
