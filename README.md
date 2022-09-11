@@ -38,5 +38,5 @@ node src/media-collection.js
 ## Local MySQL service running (Port 3306)
 
 ## Initial deployments (static):
-https://neon-medovik-ebdc5c.netlify.app/
-http://softcut-recordings-static.s3-website-us-east-1.amazonaws.com/
+ - https://neon-medovik-ebdc5c.netlify.app/
+ - http://softcut-recordings-static.s3-website-us-east-1.amazonaws.com/
