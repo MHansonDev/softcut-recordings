@@ -35,5 +35,8 @@ ng test
 node src/media-collection.js
 ```
 
-## Initial deployment:
-https://courageous-belekoy-da01ed.netlify.app/
+## Local MySQL service running (Port 3306)
+
+## Initial deployments (static):
+https://neon-medovik-ebdc5c.netlify.app/
+http://softcut-recordings-static.s3-website-us-east-1.amazonaws.com/
