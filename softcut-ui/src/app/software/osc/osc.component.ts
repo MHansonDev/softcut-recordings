@@ -17,7 +17,9 @@ export class OscComponent implements OnInit {
     }
 
     setupMediaLinks() {
-        const oscLink = new MediaLink('OSC', 'qC76XZtfZ8I');
+        const touchWaveform = new MediaLink('Touch Waveform', 'zgj7ZYlIOVU');
+        this.mediaLinks.push(touchWaveform);
+        const oscLink = new MediaLink('Awake OSC', 'qC76XZtfZ8I');
         this.mediaLinks.push(oscLink);
     }
 
