@@ -8,13 +8,15 @@ import { KeystepComponent } from './keystep/keystep.component';
 import { NeutronComponent } from './neutron/neutron.component';
 import { NornsComponent } from './norns/norns.component';
 import { MaterialModule } from '../material.module';
+import { HellraiserComponent } from './hellraiser/hellraiser.component';
 
 const gearRoutes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: 'corder', component: CorderComponent },
     { path: 'keystep', component: KeystepComponent },
     { path: 'neutron', component: NeutronComponent },
-    { path: 'norns', component: NornsComponent }
+    { path: 'norns', component: NornsComponent },
+    { path: 'hellraiser', component: HellraiserComponent }
 ]
 
 @NgModule({
@@ -22,7 +24,8 @@ const gearRoutes: Routes = [
         NeutronComponent,
         NornsComponent,
         KeystepComponent,
-        CorderComponent
+        CorderComponent,
+        HellraiserComponent
     ],
     imports: [
         CommonModule,
