@@ -17,6 +17,10 @@ export class HellraiserComponent implements OnInit {
     }
 
     setupMediaLinks() {
+        // Real Bad Coffee
+        const covfefeLink = new MediaLink('Covfefe', 'At0YzyCM9ds');
+        this.mediaLinks.push(covfefeLink);
+
         // Solo
         const soloLink = new MediaLink('Solo', 'cs3jEPdVV2k');
         this.mediaLinks.push(soloLink);
