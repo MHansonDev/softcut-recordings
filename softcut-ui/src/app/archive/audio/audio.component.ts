@@ -43,7 +43,7 @@ export class AudioComponent {
 	setupAudioFiles() {
 		this.audioFiles = [];
 		for (let audio of this.audioInfo) {
-			this.audioFiles.push(new AudioFile(audio.id, audio.file_name, 'Mathew Hanson', '/assets/Audio' + audio.path + '/' + audio.file_name + audio.extension));
+			this.audioFiles.push(new AudioFile(audio.id, audio.file_name, 'Mathew Hanson', './assets/Audio' + audio.path + '/' + audio.file_name + audio.extension));
 		}
 	}
 

@@ -39,7 +39,7 @@ describe('MediaPlayerComponent', () => {
 		// Tried all the stack overflow recommendations including triggering custom events before the play() method is triggered. No such luck.
 		const fixture = TestBed.createComponent(MediaPlayerComponent);
 		const mediaPlayer: MediaPlayerComponent = fixture.debugElement.componentInstance;
-		let testFile = new AudioFile('Medium Roast', 'Mathew Hanson', '/assets/Audio/Medium Roast.mp3');
+		let testFile = new AudioFile(-1, 'Medium Roast', 'Mathew Hanson', './assets/Audio/Medium Roast.mp3');
 		mediaPlayer.files = [testFile];
 
 		document.body.addEventListener("click", function () {
