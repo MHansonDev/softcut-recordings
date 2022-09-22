@@ -13,6 +13,7 @@ app.use('/genre', genre);
 app.use('/audio', audioInfo);
 
 app.get('/', (req, res) => {
+  console.log('Start Here');
   res.send('Media Collection is running');
 })
 

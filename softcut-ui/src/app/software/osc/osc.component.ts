@@ -3,8 +3,7 @@ import { MediaLink } from 'src/app/controls/media-group/media-link.model';
 
 @Component({
     selector: 'osc',
-    templateUrl: './osc.component.html',
-    styleUrls: ['./osc.component.scss']
+    templateUrl: './osc.component.html'
 })
 export class OscComponent implements OnInit {
 

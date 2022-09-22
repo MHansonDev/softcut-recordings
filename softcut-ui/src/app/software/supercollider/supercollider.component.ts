@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { MediaLink } from 'src/app/controls/media-group/media-link.model';
 
 @Component({
-    selector: 'cubase',
-    templateUrl: './cubase.component.html'
+    selector: 'supercollider',
+    templateUrl: './supercollider.component.html'
 })
-export class CubaseComponent implements OnInit {
+export class SupercolliderComponent implements OnInit {
 
     mediaLinks: MediaLink[] = [];
 
@@ -16,8 +16,8 @@ export class CubaseComponent implements OnInit {
     }
 
     setupMediaLinks() {
-        const oscLink = new MediaLink('Demo 1', 'zswE_3A7xMQ');
-        this.mediaLinks.push(oscLink);
+        const blip = new MediaLink('Blip', 'FcvYmpHl2tw');
+        this.mediaLinks.push(blip);
     }
 
 }
