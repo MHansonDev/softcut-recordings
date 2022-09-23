@@ -21,6 +21,9 @@ export class SupercolliderComponent implements OnInit {
 
         const blip = new MediaLink('Blip', 'FcvYmpHl2tw');
         this.mediaLinks.push(blip);
+
+        const synchestra = new MediaLink('Synchestra', 'dE1XxSQ3M28');
+        this.mediaLinks.push(synchestra);
     }
 
 }
