@@ -16,6 +16,9 @@ export class SupercolliderComponent implements OnInit {
     }
 
     setupMediaLinks() {
+        const moogVCF = new MediaLink('Moog VCF', 'V_vKJ2YdKVw');
+        this.mediaLinks.push(moogVCF);
+
         const blip = new MediaLink('Blip', 'FcvYmpHl2tw');
         this.mediaLinks.push(blip);
     }
