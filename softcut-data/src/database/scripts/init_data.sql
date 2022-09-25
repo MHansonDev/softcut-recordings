@@ -32,6 +32,9 @@ INSERT INTO genre (`name`, `description`, color, image, `read_only`, added_on)
 Select 'Chill', 'Tunes that don''t feature heavy bass or a snare that smacks', '0000FF', 'Chill/chill-thin-border.png', 1, current_date
 WHERE NOT EXISTS (SELECT * FROM genre WHERE `name` = 'Chill' LIMIT 1);
 
+INSERT INTO genre (`name`, `description`, color, image, `read_only`, added_on)
+Select 'Experimental', 'The results of experimentations that don''t fit into any specific category', '0000FF', 'Experimental/experimental-thin-border.png', 1, current_date
+WHERE NOT EXISTS (SELECT * FROM genre WHERE `name` = 'Experimental' LIMIT 1);
 
 
 /* Insert Audio file Data */
@@ -148,3 +151,43 @@ WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Birch Street Lofi' LIMI
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'FM And a Maine Made Flute', 'Cultural Fire Pit', '/Chill', '.mp3', @ChillGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'FM And a Maine Made Flute' LIMIT 1);
+
+/*************************** Experimental ****************************************/
+Select @ExperimentalGenreID := id From genre where `name` = 'Experimental';
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Tick Welt', 'VCV Rack / Serum / Automation / Groove Agent', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Tick Welt' LIMIT 1);
+
+Select @ExperimentalGenreID := id From genre where `name` = 'Experimental';
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'VeeSee Revisit', 'Using the VeeSeeVee (VCV Rack) plugin for Cubase', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'VeeSee Revisit' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'The Process of Drying a Pickle', 'Improve Molly the Polly Jam', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'The Process of Drying a Pickle' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Not Pretty', 'Triggering Heavy Samples with the Awake Script', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Not Pretty' LIMIT 1);
+
+Select @ExperimentalGenreID := id From genre where `name` = 'Experimental';
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Modulated Generation', 'Generated Triggers on the Norns', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Modulated Generation' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'RabLat', 'Nerve, Norns & VSTs ', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'RabLat' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Otis And The Keys', 'Piano and some Softclipped Synths', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Otis and the Keys' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Wik', 'Syncopated Beat accompanied by a Drone', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Wik' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'rHUBARb bRAMBLe', 'Attempt at covering Aphex Twin', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'rHUBARb bRAMBLe' LIMIT 1);

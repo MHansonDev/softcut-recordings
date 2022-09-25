@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
+import System from "../system";
 import { MediaType } from "./models/media-type.model";
 
 @Injectable()
@@ -27,19 +28,19 @@ export class MediaService {
 	) { }
 
 	setupDB() {
-		return this.http.get<MediaType[]>('http://3.88.100.250:3001/mediaType/setupDB').subscribe((types: MediaType[]) => {
+		return this.http.get<MediaType[]>(System.apiURL + '/mediaType/setupDB').subscribe((types: MediaType[]) => {
 			alert(types);
 		});
 	}
 
 	getMediaTypes() {
-		return this.http.get<MediaType[]>('http://3.88.100.250:3001/mediaType/getMediaTypes').subscribe((types: MediaType[]) => {
+		return this.http.get<MediaType[]>( System.apiURL + '/mediaType/getMediaTypes').subscribe((types: MediaType[]) => {
 			this.mediaTypes = types;
 		});
 	}
 
 	createMediaType(mediaType: MediaType): Observable<any> {
-		return this.http.post<any>('http://3.88.100.250:3001/mediaType/createMediaType', mediaType);
+		return this.http.post<any>( System.apiURL + '/mediaType/createMediaType', mediaType);
 	}
 
 	deleteMediaType(id: number): Observable<any> {
@@ -51,7 +52,7 @@ export class MediaService {
 				id: id,
 			}
 		};
-		return this.http.delete<any>('http://3.88.100.250:3001/mediaType/deleteMediaType', options);
+		return this.http.delete<any>(System.apiURL + '/mediaType/deleteMediaType', options);
 	}
 
 }
