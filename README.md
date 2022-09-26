@@ -3,9 +3,9 @@
  Experimental music website
  
 ![home-thin-border](https://user-images.githubusercontent.com/867946/181144111-515a0243-29a7-48e6-90e2-a294a21f1db8.jpg)
- * Written in Angular 13 / Express JS / MySQL
  * Documentation of a home music production setup
  * Archive of rendered Cubase projects
+ * Written in Angular 13 / Express JS / MySQL
  
  
  ## Docker Install:
