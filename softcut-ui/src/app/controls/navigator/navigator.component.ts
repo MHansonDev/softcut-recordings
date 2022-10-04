@@ -60,7 +60,7 @@ export class NavigatorComponent implements OnInit {
         let software = new NavLink('Software', '/software', true);
         software.children.push(new NavLink('Cubase', '/cubase', false));
         software.children.push(new NavLink('Open Stage Control', '/osc', false));
-        software.children.push(new NavLink('Supercollider', '/supercollider', false));
+        software.children.push(new NavLink('SuperCollider', '/supercollider', false));
         this.navigationLinks.push(software);
 
         // Archive
