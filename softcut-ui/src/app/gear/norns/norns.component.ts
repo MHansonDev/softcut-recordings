@@ -3,8 +3,7 @@ import { MediaLink } from 'src/app/controls/media-group/media-link.model';
 
 @Component({
     selector: 'norns',
-    templateUrl: './norns.component.html',
-    styleUrls: ['./norns.component.scss']
+    templateUrl: './norns.component.html'
 })
 export class NornsComponent implements OnInit {
 

@@ -54,6 +54,7 @@ export class NavigatorComponent implements OnInit {
         gear.children.push(new NavLink('Keystep 37', '/keystep', false));
         gear.children.push(new NavLink('Corder', '/corder', false));
         gear.children.push(new NavLink('Hellraiser', '/hellraiser', false));
+        gear.children.push(new NavLink('PO-12', '/po-12', false));
         this.navigationLinks.push(gear);
 
         // Software
