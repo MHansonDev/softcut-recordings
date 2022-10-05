@@ -44,6 +44,12 @@ export class NavigatorComponent implements OnInit {
         }
     }
 
+    homeClick() {
+        for (let link of this.navigationLinks) {
+            link.expanded = false;
+        }
+    }
+
     setNavigationLinks() {
         this.navigationLinks = [];
 
