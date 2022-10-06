@@ -193,5 +193,5 @@ Select 'rHUBARb bRAMBLe', 'Attempt at covering Aphex Twin', '/Experimental', '.m
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'rHUBARb bRAMBLe' LIMIT 1);
 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
-Select 'Valitrex Hue', 'Valitrex Hue', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
+Select 'Valitrex Hue', 'An old track using the Mr Bill approach to processing sounds', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Valitrex Hue' LIMIT 1);
