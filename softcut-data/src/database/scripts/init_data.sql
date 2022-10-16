@@ -62,6 +62,10 @@ Select 'Confused Smoke Detector', 'Recorded with a Smoke Alarm', '/Metal', '.mp3
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Confused Smoke Detector' LIMIT 1);
 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'C1 Elite', 'A Revived Guitar for a Friend', '/Metal', '.mp3', @MetalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'C1 Elite' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'We''re Hirin''', 'No We''re not', '/Metal', '.mp3', @MetalGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'We''re Hirin''' LIMIT 1);
 
