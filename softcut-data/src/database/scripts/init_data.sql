@@ -210,7 +210,10 @@ INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'Not Pretty', 'Triggering Heavy Samples with the Awake Script', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Not Pretty' LIMIT 1);
 
-Select @ExperimentalGenreID := id From genre where `name` = 'Experimental';
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Subskew', 'VST Experimentation', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Subskew' LIMIT 1);
+
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'Modulated Generation', 'Generated Triggers on the Norns', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Modulated Generation' LIMIT 1);
