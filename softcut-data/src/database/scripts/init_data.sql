@@ -173,6 +173,10 @@ Select 'Norns Lounge', 'A Digital elevator', '/Chill', '.mp3', @ChillGenreID, cu
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Norns Lounge' LIMIT 1);
 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Pre Dry', 'A Pandemic''s Beginning', '/Chill', '.mp3', @ChillGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Pre Dry' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'Birch Street Lofi', 'A Road Remembered', '/Chill', '.mp3', @ChillGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Birch Street Lofi' LIMIT 1);
 
