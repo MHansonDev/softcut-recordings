@@ -62,8 +62,8 @@ Select 'Confused Smoke Detector', 'Recorded with a Smoke Alarm', '/Metal', '.mp3
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Confused Smoke Detector' LIMIT 1);
 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
-Select 'Vine Cumber', 'From the Instagram Days', '/Metal', '.mp3', @MetalGenreID, current_date
-WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Vine Cumber' LIMIT 1);
+Select 'Hagrid''s Motorbike', 'From the Instagram Days', '/Metal', '.mp3', @MetalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Hagrid''s Motorbike' LIMIT 1);
 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'C1 Elite', 'A Revived Guitar for a Friend', '/Metal', '.mp3', @MetalGenreID, current_date
@@ -147,10 +147,13 @@ INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'Key Torn', 'Exploring a mix of instruments', '/Chill', '.mp3', @ChillGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Key Torn' LIMIT 1);
 
-Select @ChillGenreID := id From genre where `name` = 'Chill';
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'Isomatic', 'Jake Bowen Inspiration', '/Chill', '.mp3', @ChillGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Isomatic' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Senses Passthrough', 'Anxiety & Nostalgia As The Leaves Drop', '/Chill', '.mp3', @ChillGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Senses Passthrough' LIMIT 1);
 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select '57 Caps', 'Lush Landscape', '/Chill', '.mp3', @ChillGenreID, current_date
