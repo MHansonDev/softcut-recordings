@@ -212,6 +212,11 @@ INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'Modulated Generation', 'Generated Triggers on the Norns', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Modulated Generation' LIMIT 1);
 
+Select @ExperimentalGenreID := id From genre where `name` = 'Experimental';
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Rubber Kicks', 'A Cold Maine Winter & Warbled Tapes', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Rubber Kicks' LIMIT 1);
+
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'RabLat', 'Nerve, Norns & VSTs ', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'RabLat' LIMIT 1);
