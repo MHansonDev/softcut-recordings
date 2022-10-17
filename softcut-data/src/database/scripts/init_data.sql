@@ -62,6 +62,10 @@ Select 'Confused Smoke Detector', 'Recorded with a Smoke Alarm', '/Metal', '.mp3
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Confused Smoke Detector' LIMIT 1);
 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Vine Cumber', 'From the Instagram Days', '/Metal', '.mp3', @MetalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Vine Cumber' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'C1 Elite', 'A Revived Guitar for a Friend', '/Metal', '.mp3', @MetalGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'C1 Elite' LIMIT 1);
 
@@ -86,6 +90,10 @@ WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Free Range Seltzer' LIM
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'Sweltering Faults', 'Mistakes and all...', '/Rock', '.mp3', @RockGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Sweltering Faults' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Old Spice Girl', 'She Stole It...', '/Rock', '.mp3', @RockGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Old Spice Girl' LIMIT 1);
 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'East Annex', 'UMaine Campus of course', '/Rock', '.mp3', @RockGenreID, current_date
@@ -122,6 +130,10 @@ Select 'SubHarmon', 'The Original Subharmonics', '/Electronic', '.mp3', @Electro
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'SubHarmon' LIMIT 1);
 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Curb Corder', 'A Competition of Decorated Shots & Slim Dynamics', '/Electronic', '.mp3', @ElectronicGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Curb Corder' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'PreSubHarmon', 'Groving Subharmonics on the Neutron', '/Electronic', '.mp3', @ElectronicGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'PreSubHarmon' LIMIT 1);
 
@@ -139,6 +151,14 @@ WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Isomatic' LIMIT 1);
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select '57 Caps', 'Lush Landscape', '/Chill', '.mp3', @ChillGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = '57 Caps' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Gravel', 'Producing for a Friend With a Good Voice', '/Chill', '.mp3', @ChillGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Gravel' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Jettison Overdrive', 'Inspired by Dirt Cheap GoodWill Speakers', '/Chill', '.mp3', @ChillGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Jettison Overdrive' LIMIT 1);
 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'AntiWeen', 'A cold, yet comfortable memory', '/Chill', '.mp3', @ChillGenreID, current_date

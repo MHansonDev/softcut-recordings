@@ -16,6 +16,9 @@
 
 .audioList {
 	overflow: auto;
+	margin-bottom: 10px;
+	border-bottom: thin solid lightgray;
+	border-top: thin solid lightgray;
 }
 
 .audioLink {
