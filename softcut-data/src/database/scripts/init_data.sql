@@ -126,6 +126,10 @@ Select 'Slammed Corder', 'Pissed Off Tape Machine', '/Electronic', '.mp3', @Elec
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Slammed Corder' LIMIT 1);
 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Patch Mods', 'Neutron Patching', '/Electronic', '.mp3', @ElectronicGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Patch Mods' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'SubHarmon', 'The Original Subharmonics', '/Electronic', '.mp3', @ElectronicGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'SubHarmon' LIMIT 1);
 
@@ -175,6 +179,10 @@ WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Birch Street Lofi' LIMI
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'FM And a Maine Made Flute', 'Cultural Fire Pit', '/Chill', '.mp3', @ChillGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'FM And a Maine Made Flute' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Post Histamine', 'Millinocket Maine', '/Chill', '.mp3', @ChillGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Post Histamine' LIMIT 1);
 
 /*************************** Experimental ****************************************/
 Select @ExperimentalGenreID := id From genre where `name` = 'Experimental';
