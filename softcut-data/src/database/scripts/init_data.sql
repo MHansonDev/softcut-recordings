@@ -85,7 +85,7 @@ WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Free Range Seltzer' LIM
 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'Scattered', 'Modern yet rushed Track', '/Rock', '.mp3', @RockGenreID, current_date
-WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Free Range Seltzer' LIMIT 1);
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Scattered' LIMIT 1);
 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'Sweltering Faults', 'Mistakes and all...', '/Rock', '.mp3', @RockGenreID, current_date
