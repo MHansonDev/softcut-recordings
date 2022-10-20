@@ -73,6 +73,10 @@ INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'We''re Hirin''', 'No We''re not', '/Metal', '.mp3', @MetalGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'We''re Hirin''' LIMIT 1);
 
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Moderately Melted Iron', 'Struggled to determine the Genre.', '/Metal', '.mp3', @MetalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Moderately Melted Iron' LIMIT 1);
+
 /****************************** Rock ****************************************/
 Select @RockGenreID := id From genre where `name` = 'Rock';
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
