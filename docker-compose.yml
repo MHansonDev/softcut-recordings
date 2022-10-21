@@ -4,6 +4,7 @@ services:
   mysql-container:
     container_name: mysql-container
     image: mysql:5.7
+    build: './mysql'
     restart: always
     environment:
       MYSQL_DATABASE: 'media'
