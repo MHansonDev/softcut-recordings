@@ -228,8 +228,12 @@ Select 'Rubber Kicks', 'A Cold Maine Winter & Warbled Tapes', '/Experimental', '
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Rubber Kicks' LIMIT 1);
 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
-Select 'RabLat', 'Nerve, Norns & VSTs ', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
+Select 'RabLat', 'Nerve, Norns & VSTs', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'RabLat' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Dorothea Brambelton', 'The New England Well Point Experience', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Dorothea Brambelton' LIMIT 1);
 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'Otis And The Keys', 'Piano and some Softclipped Synths', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
