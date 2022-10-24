@@ -38,6 +38,6 @@ node src/media-collection.js
 ## Local MySQL service running (Port 3306)
 
 ## Initial deployments:
- - Data Driven EC2 Instance: http://3.88.100.250/softcut-recordings.com
+ - Data Driven EC2 Instance: http://3.89.62.191/softcut-recordings/
  - AWS S3 Static: http://softcut-recordings-static.s3-website-us-east-1.amazonaws.com/
  - Netlify Static: https://neon-medovik-ebdc5c.netlify.app/
