@@ -1,12 +1,28 @@
 <div class="flexNavigator">
 
     <h3>
-        <a routerLink="/home" class="homeLink">
+        <a routerLink="/home" class="homeLink" (click)="homeClick()">
             Softcut Recordings
         </a>
+
+        <div *ngIf="isMobile" class="mobileMenu">
+            <mat-icon [matMenuTriggerFor]="mobileMenu">
+                menu
+            </mat-icon>
+            <mat-menu #mobileMenu="matMenu">
+                <button *ngFor="let navLink of navigationLinks" mat-menu-item [matMenuTriggerFor]="subMenu">
+                    {{navLink.name}}
+                    <mat-menu #subMenu="matMenu">
+                        <button *ngFor="let navChild of navLink.children" mat-menu-item [routerLink]="navChild.path">
+                            {{navChild.name}}
+                        </button>
+                    </mat-menu>
+                </button>
+            </mat-menu>
+        </div>
     </h3>
 
-    <mat-nav-list>
+    <mat-nav-list *ngIf="!isMobile">
         <div *ngFor="let navLink of navigationLinks">
             <a mat-list-item (click)="parentLinkClick(navLink)">
                 <div class="parentLink">
@@ -28,15 +44,6 @@
         </div>
     </mat-nav-list>
 
-    <div class="footer">
-        <span>
-            207.459.0726
-        </span>
-        <span>
-            mhanson048@gmail.com
-        </span>
-        <a href="https://github.com/mhansondev" target="_blank">
-            GitHub
-        </a>
-    </div>
+    <app-footer *ngIf="!isMobile"></app-footer>
+
 </div>

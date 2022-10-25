@@ -6,7 +6,9 @@ var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 
 router.get('/getGenres', (req, res) => {
+	console.log('Called Get Genres')
 	database.query('Select * From genre', function (err, result) {
+		console.log(err);
 		res.send(result);
 	});
 });

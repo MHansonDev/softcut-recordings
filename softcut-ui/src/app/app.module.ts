@@ -28,7 +28,6 @@ const routes: Routes = [
         ControlsModule,
         NavigatorModule
     ],
-    providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

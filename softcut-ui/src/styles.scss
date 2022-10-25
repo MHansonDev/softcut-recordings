@@ -49,6 +49,12 @@ img {
     padding-top: 40px;
 }
 
+@media only screen and (max-width: 600px) {
+	.headerBox {
+        padding-top:10px;
+	}
+}
+
 .sectionHeader {
     font-size:32px !important;
     line-height: 1.25 !important;
@@ -63,12 +69,19 @@ img {
     padding-top: 25px;
 }
 
+@media only screen and (max-width: 600px) {
+	.descriptionContainer {
+        padding-top: 0;
+	}
+}
+
 .descriptionText {
     line-height: 1.5
 }
 
 .contentContainer {
     flex-direction: column;
+    max-width: 80vw;
 }
 
 .stickyHeader {

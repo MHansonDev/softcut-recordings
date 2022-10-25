@@ -1,0 +1,31 @@
+:host {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+@media only screen and (max-width: 600px) {
+	:host {
+		height: 100%;
+		flex: 1 auto;
+		padding-left: '';
+	}
+}
+
+.archiveTopRow {
+	flex: 0 auto;
+}
+
+.archiveBottomRow {
+	display: flex;
+	height: 100%;
+	flex: 1 auto;
+	overflow: auto;
+}
+
+.archiveSectionHeader {
+	font-size: 32px !important;
+	line-height: 1.25 !important;
+	margin-bottom: 0.25em !important;
+	border-bottom: thin solid darkgray;
+}

@@ -3,8 +3,7 @@ import { MediaLink } from 'src/app/controls/media-group/media-link.model';
 
 @Component({
     selector: 'cubase',
-    templateUrl: './cubase.component.html',
-    styleUrls: ['./cubase.component.scss']
+    templateUrl: './cubase.component.html'
 })
 export class CubaseComponent implements OnInit {
 

@@ -1,7 +1,24 @@
+:host {
+	display: flex;
+	flex: 1 auto;
+}
+
+.audioFlex {
+	display: flex;
+	flex-direction: row;
+}
+
 .mediaList {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+}
+
+.audioList {
+	overflow: auto;
+	margin-bottom: 10px;
+	border-bottom: thin solid lightgray;
+	border-top: thin solid lightgray;
 }
 
 .audioLink {
@@ -18,9 +35,23 @@
 	box-sizing: border-box;
 }
 
+.trackNumber {
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: bold;
+	color: gray;
+}
+
+.audioLinkContainer {
+	width: 400px;
+}
+
+.audioPlayerInfo {
+	padding-left: 20px;
+}
+
 .playerContainer {
-	position: absolute;
-	bottom: 10px;
+	background-color: white;
+	padding-top: 10px;
 }
 
 .mat-list-base {

@@ -1,5 +1,6 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import System from 'src/app/system';
 import { NavLink } from './nav-link.model';
 
 @Component({
@@ -21,12 +22,14 @@ import { NavLink } from './nav-link.model';
 export class NavigatorComponent implements OnInit {
 
     navigationLinks: NavLink[] = [];
+    isMobile: boolean = false;
 
     constructor(
     ) { }
 
     ngOnInit(): void {
         this.setNavigationLinks();
+        this.isMobile = System.determineMobile();
     }
 
     parentLinkClick(parentLink: NavLink) {
@@ -41,7 +44,14 @@ export class NavigatorComponent implements OnInit {
         }
     }
 
+    homeClick() {
+        for (let link of this.navigationLinks) {
+            link.expanded = false;
+        }
+    }
+
     setNavigationLinks() {
+        this.navigationLinks = [];
 
         // Gear
         let gear = new NavLink('Gear', '/gear', true);
@@ -49,23 +59,27 @@ export class NavigatorComponent implements OnInit {
         gear.children.push(new NavLink('Neutron', '/neutron', false));
         gear.children.push(new NavLink('Keystep 37', '/keystep', false));
         gear.children.push(new NavLink('Corder', '/corder', false));
+        gear.children.push(new NavLink('Hellraiser', '/hellraiser', false));
+        gear.children.push(new NavLink('PO-12', '/po-12', false));
         this.navigationLinks.push(gear);
 
         // Software
         let software = new NavLink('Software', '/software', true);
         software.children.push(new NavLink('Cubase', '/cubase', false));
         software.children.push(new NavLink('Open Stage Control', '/osc', false));
+        software.children.push(new NavLink('SuperCollider', '/supercollider', false));
         this.navigationLinks.push(software);
 
         // Archive
         let archive = new NavLink('Archive', '/archive', true);
-        archive.children.push(new NavLink('Metal', '/metal', false));
-        archive.children.push(new NavLink('Rock', '/rock', false));
-        archive.children.push(new NavLink('Electronic', '/electronic', false));
-        archive.children.push(new NavLink('Chill', '/chill', false));
-        archive.children.push(new NavLink('API Test', '/api', false));
+        archive.children.push(new NavLink('Audio', '/audio', false));
         this.navigationLinks.push(archive);
 
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize() {
+        this.isMobile = System.determineMobile();
     }
 
 }

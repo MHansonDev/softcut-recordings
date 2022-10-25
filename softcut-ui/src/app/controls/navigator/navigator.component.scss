@@ -4,6 +4,20 @@
 	padding-left: 55px;
 }
 
+@media only screen and (max-width: 1090px) {
+	.flexNavigator {
+		padding: 20px;
+		padding-left: '';
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.flexNavigator {
+		padding: 20px;
+		padding-left: '';
+	}
+}
+
 .homeLink {
 	font-size: 23px;
 	font-family: serif;
@@ -19,29 +33,18 @@
 }
 
 .childLink {
-	margin-left:20px;
+	margin-left: 20px;
 }
 
 .selectedChild {
-	margin-left:20px;
+	margin-left: 20px;
 	color: blue;
 	text-decoration: underline;
-	padding-left:20px;
+	padding-left: 20px;
 }
 
-.footer {
-    position: absolute;
-    left: 0;
-	right: 0px;
-    bottom: 0px;
-	padding-bottom:10px;
-	padding-right: 10px;
-}
-
-.footer {
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	padding-left: 55px;
-	padding-bottom:10px;
+@media only screen and (max-width: 600px) {
+	.mobileMenu {
+		float: right;
+	}
 }

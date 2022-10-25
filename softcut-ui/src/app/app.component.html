@@ -10,6 +10,7 @@
             <router-outlet (activate)="scrollToTop(contentDiv)"></router-outlet>
         </div>
 
+        <app-footer *ngIf="isMobile"></app-footer>
 
     </div>
 
