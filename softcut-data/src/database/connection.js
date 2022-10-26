@@ -2,10 +2,9 @@ const mysql = require('mysql')
 
 console.log('Connecting to MYSQL...')
 var connection = mysql.createConnection({
-	//host: 'localhost',
-	host: '172.17.0.1', // Docker
-	port: '3306', // Docker
-	// user: 'user', // Docker
+	host: 'localhost',
+	// host: '172.17.0.1', // Docker
+	port: '3306',
 	user: 'root',
 	password: 'password',
 	database: 'media'
