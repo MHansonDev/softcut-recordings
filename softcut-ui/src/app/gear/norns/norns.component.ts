@@ -36,6 +36,11 @@ export class NornsComponent implements OnInit {
         // Guitar 2
         const guitar3Link = new MediaLink('Guitar 3', 'RAo01ECq6Dw');
         this.mediaLinks.push(guitar3Link);
+
+        // Guitar Stutter 
+        const guitarStutterLink = new MediaLink('Guitar Stutter', 'jovs3C5X-Ck');
+        this.mediaLinks.push(guitarStutterLink);
+        
     }
 
 }
