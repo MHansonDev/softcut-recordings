@@ -15,7 +15,7 @@ export class MediaPlayerComponent {
     @ViewChild('audioInfo', { static: true }) audioInfoRef: ElementRef<HTMLDivElement>;
     @Input() files: Array<any> = [];
     currentFile: any = {};
-
+    listIndex: number;
     fileDescription: string = '<span></span>'
 
     constructor(
@@ -30,18 +30,18 @@ export class MediaPlayerComponent {
         });
     }
 
-    ngAfterViewInit(): void {
-    }
-
     openFile(file: AudioFile) {
         this.audioRef.nativeElement.src = file.path;
         this.audioRef.nativeElement.play();
+        let audioInfo = this.audioService.audioInfo.filter(ai => ai.id == file.id)[0];
+        this.listIndex = this.files.indexOf(file);
+        this.fileDescription = 'Description: ' + audioInfo.description;
     }
 
-    fileMouseEnter(file: AudioFile) {
-        let audioInfo = this.audioService.audioInfo.filter(ai => ai.id == file.id)[0];
-        let unsafeDescription = audioInfo.description;
-        this.fileDescription = 'Description: ' + unsafeDescription;
+    fileHover(hover: boolean, file: AudioFile) {
+        let files = this.audioService.audioInfo;
+        let audioInfo = (hover) ? files.filter(ai => ai.id == file.id)[0] : files[this.listIndex];
+        this.fileDescription = (audioInfo) ? 'Description: ' + audioInfo.description : '';
     }
 
 }
