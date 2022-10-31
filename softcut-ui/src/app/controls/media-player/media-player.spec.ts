@@ -42,6 +42,10 @@ describe('MediaPlayerComponent', () => {
 		expect(mediaPlayer).toBeTruthy();
 	}));
 
+	it('should update git to......', async(() => {
+		expect(1).toBeTruthy();
+	}));
+
 	it(`play button should resume playpack`, async(() => {
 		// Test continues to fail due to the error: 'NotAllowedError: play() failed because the user didn't interact with the document first'.
 		// Tried all the stack overflow recommendations including triggering custom events before the play() method is triggered. No such luck.
