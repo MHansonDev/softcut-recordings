@@ -1,5 +1,5 @@
-import { Component, ElementRef, Input, SecurityContext, ViewChild } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { OnInit } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { AudioService } from 'src/app/archive/audio/audio.service';
 import { AudioFile } from './audio-file.model';
 
@@ -9,7 +9,7 @@ import { AudioFile } from './audio-file.model';
     styleUrls: ['./media-player.component.scss'],
 })
 
-export class MediaPlayerComponent {
+export class MediaPlayerComponent implements OnInit {
 
     @ViewChild('audioRef', { static: true }) audioRef: ElementRef<HTMLAudioElement>;
     @ViewChild('audioInfo', { static: true }) audioInfoRef: ElementRef<HTMLDivElement>;
@@ -20,8 +20,10 @@ export class MediaPlayerComponent {
 
     constructor(
         private audioService: AudioService,
-        private sanitizer: DomSanitizer
     ) {
+    }
+
+    ngOnInit() {
         this.audioService.audioClearObservable().subscribe(() => {
             if (this.audioRef && this.audioInfoRef) {
                 this.audioRef.nativeElement.src = '';

@@ -2,6 +2,8 @@ import { TestBed, async } from '@angular/core/testing';
 import { MatListModule } from '@angular/material/list';
 import { MatTabsModule } from '@angular/material/tabs';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { AudioService } from 'src/app/archive/audio/audio.service';
 import { AudioFile } from './audio-file.model';
 import { MediaPlayerComponent } from './media-player.component';
 
@@ -13,6 +15,11 @@ const RouterSpy = jasmine.createSpyObj(
 	['navigate']
 );
 
+const audioServiceSpy = jasmine.createSpyObj(['audioClearObservable']);
+let mockAudioService = {
+	// audioClearObservable: () => Observable<null>
+}
+
 describe('MediaPlayerComponent', () => {
 	beforeEach(async(() => {
 		TestBed.configureTestingModule({
@@ -22,7 +29,8 @@ describe('MediaPlayerComponent', () => {
 				MediaPlayerComponent,
 			],
 			providers: [
-				{ provide: Router, useValue: RouterSpy }
+				{ provide: Router, useValue: RouterSpy },
+				{ provide: AudioService, useValue: mockAudioService }
 			]
 		}).compileComponents();
 
