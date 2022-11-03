@@ -8,6 +8,10 @@ import { Genre } from "../models/genere.model";
 @Injectable()
 export class AudioService {
 
+	constructor(
+		private http: HttpClient
+	) { }
+
 	private _genres: Genre[] = [];
 	private _audioInfo: AudioInfo[] = [];
 
@@ -43,10 +47,6 @@ export class AudioService {
 	audioClearObservable(): Observable<null> {
         return this.audioClearSubject$.asObservable();
     }
-
-	constructor(
-		private http: HttpClient
-	) { }
 
 	getGenres() {
 		return this.http.get<Genre[]>(System.apiURL + '/genre/getGenres').subscribe((genres: Genre[]) => {
