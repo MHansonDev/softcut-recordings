@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MediaLink } from './media-link.model';
 
 @Component({
@@ -6,18 +6,13 @@ import { MediaLink } from './media-link.model';
     templateUrl: './media-group.component.html',
     styleUrls: ['./media-group.component.scss']
 })
-export class MediaGroupComponent implements OnInit {
+export class MediaGroupComponent {
 
 	@Input() mediaLinks: MediaLink[];
-    showContent = false;
 
     constructor() { }
 
-    ngOnInit(): void {
-    }
-
     displayMedia(div: HTMLDivElement) {
-        this.showContent = true;
         setTimeout(() => {
             div.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
         }, 0);
