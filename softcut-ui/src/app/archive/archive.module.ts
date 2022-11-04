@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ControlsModule } from '../controls/controls.module';
 import { AudioComponent } from './audio/audio.component';
 import { AudioService } from './audio/audio.service';
-import { MediaService } from './media.service';
 import { MaterialModule } from '../material.module';
 
 const archiveRoutes: Routes = [
@@ -25,7 +24,6 @@ const archiveRoutes: Routes = [
 		ControlsModule
 	],
 	providers: [
-		MediaService,
 		AudioService
 	]
 })

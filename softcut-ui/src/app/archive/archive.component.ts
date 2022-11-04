@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MediaService } from './media.service';
 
 @Component({
     selector: 'root',
