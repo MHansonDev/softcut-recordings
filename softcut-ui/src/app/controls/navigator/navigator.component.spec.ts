@@ -48,4 +48,27 @@ describe('NavigatorComponent', () => {
 		expect(navigator.navigationLinks[0].expanded).toBeTrue();
 	}));
 
+	it(`second click should collapse the portal`, async(() => {
+		const fixture = TestBed.createComponent(NavigatorComponent);
+		const navigator = fixture.debugElement.componentInstance;
+		navigator.navigationLinks = [new NavLink('Portal 1', '/portal1', true)];
+
+		// First Click [Expand]
+		navigator.parentLinkClick(navigator.navigationLinks[0]);
+
+		// Second Click [Collapse]
+		navigator.parentLinkClick(navigator.navigationLinks[0]);
+
+		expect(navigator.navigationLinks[0].expanded).toBeFalse();
+	}));
+
+	it(`home click should collapse all portal`, async(() => {
+		const fixture = TestBed.createComponent(NavigatorComponent);
+		const navigator = fixture.debugElement.componentInstance;
+		navigator.navigationLinks = [new NavLink('Portal 1', '/portal1', true)];
+		navigator.parentLinkClick(navigator.navigationLinks[0]);
+		navigator.homeClick();
+		expect(navigator.navigationLinks[0].expanded).toBeFalse();
+	}));
+
 });
