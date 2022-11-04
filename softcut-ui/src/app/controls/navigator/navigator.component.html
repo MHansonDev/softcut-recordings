@@ -22,7 +22,7 @@
         </div>
     </h3>
 
-    <mat-nav-list *ngIf="!isMobile">
+    <mat-nav-list *ngIf="!isMobile" class="navList">
         <div *ngFor="let navLink of navigationLinks">
             <a mat-list-item (click)="parentLinkClick(navLink)">
                 <div class="parentLink">
