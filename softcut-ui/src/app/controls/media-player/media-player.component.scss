@@ -61,3 +61,8 @@
 h4 {
 	margin: 0;
 }
+
+audio::-webkit-media-controls-enclosure {
+	border-radius: 5px;
+	background-color: steelblue;
+}
