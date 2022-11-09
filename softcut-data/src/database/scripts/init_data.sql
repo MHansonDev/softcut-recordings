@@ -250,3 +250,7 @@ WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'rHUBARb bRAMBLe' LIMIT 
 INSERT INTO audio (file_name, description, path, extension, genre, added_on)
 Select 'Valitrex Hue', 'An old track using the Mr Bill approach to processing sounds', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
 WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Valitrex Hue' LIMIT 1);
+
+INSERT INTO audio (file_name, description, path, extension, genre, added_on)
+Select 'Wallace McArduous', 'How it really feels going out California Way', '/Experimental', '.mp3', @ExperimentalGenreID, current_date
+WHERE NOT EXISTS (SELECT * FROM audio WHERE file_name = 'Wallace McArduous' LIMIT 1);
