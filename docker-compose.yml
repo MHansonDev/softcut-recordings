@@ -1,8 +1,7 @@
 version: '1.0'
 
 services:
-  mysql-container:
-    container_name: mysql-container
+  mysql:
     image: mysql:5.7
     command: --default-authentication-plugin=mysql_native_password
     restart: always
@@ -28,7 +27,7 @@ services:
       - ./softcut-data:/src/
       - nodemodules-data:/softcut-data/node_modules
     depends_on:
-      - mysql-container
+      - mysql
 
   softcut-ui:
     build: ./softcut-ui
@@ -39,7 +38,7 @@ services:
       - nodemodules-ui:/src/node_modules
     depends_on:
       - softcut-data
-      - mysql-container
+      - mysql
 
 volumes:
   nodemodules-ui: {}
